@@ -19,18 +19,26 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit} className="input-group">
-        <input
-        placeholder="Get a five-day forecast in your favorite cities"
-        className="form-control"
-        value={this.state.term}
-        onChange={this.onInputChange}
+      <div>
+        <div className="row" />
+     <div id="left" className="col-md-6">Hey boy</div>
+     <div id="right" className="col-md-6">Hey girl</div>
 
-         />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">Submit</button>
-        </span>
-      </form>
+        <form onSubmit={this.onFormSubmit} className="input-group">
+          <input
+          placeholder="Get a five-day forecast in your favorite cities"
+          className="form-control"
+          value={this.state.term}
+          onChange={this.onInputChange}
+
+           />
+          <span className="input-group-btn">
+            <button type="submit" className="btn btn-secondary">Submit</button>
+          </span>
+        </form>
+
+      </div>
+
     );
   }
 }
