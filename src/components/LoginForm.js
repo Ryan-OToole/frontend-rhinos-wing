@@ -17,7 +17,7 @@ class LoginForm extends Component {
     fetch(`http://localhost:3000/sessions`, {
       method: 'POST',
       headers: {
-        "Content-Type" : 'application/json'
+        "Content-Type" : "application/json",
       },
       body: JSON.stringify({
         username: this.state.username,
@@ -29,6 +29,13 @@ class LoginForm extends Component {
       console.log(json)
       localStorage.setItem('token', json.token);
     })
+    .catch( err => {
+      console.log()
+      this.setState({
+        username: "",
+        password: ""
+      });
+    });
   }
 
   render() {

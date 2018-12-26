@@ -27,6 +27,7 @@ class RegistrationForm extends Component {
     .then( r=>r.json() )
     .then( json => {
       console.log(json)
+      localStorage.setItem('token', json.token);
     })
   }
 
