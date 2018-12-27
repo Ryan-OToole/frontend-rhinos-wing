@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { updateUser } from '../actions/index'
 
 class LoginForm extends Component {
   state = {
@@ -26,8 +28,10 @@ class LoginForm extends Component {
     })
     .then( r=>r.json() )
     .then( json => {
-      console.log(json)
       localStorage.setItem('token', json.token);
+      this.props.updateUser(json)
+      console.log("json", json)
+      console.log("currentUser", this.props.currentUser)
     })
     .catch( err => {
       console.log()
@@ -65,4 +69,19 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+
+function mapStateToProps(state) {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    updateUser: (user) => {
+      dispatch(updateUser(user))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)

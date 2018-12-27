@@ -1,16 +1,18 @@
-import axios from 'axios';
+export const UPDATE_CURRENT_USER = 'UPDATE_CURRENT_USER';
+export const UPDATE_POSTS = 'UPDATE_POSTS';
+export const TEST = 'TEST'
 
-const API_KEY = '22d6fd35ca4e7a3f2773d51998b92f59';
-const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
-export const FETCH_WEATHER = 'FETCH_WEATHER';
-
-export function fetchWeather(city) {
-  const url = `${ROOT_URL}&q=${city},us`;
-  const request = axios.get(url);
-
+export function updateUser(user) {
   return {
-    type: FETCH_WEATHER,
-    payload: request
+    type: UPDATE_CURRENT_USER,
+    payload: user
   };
 }
+
+export function updatePostList(post) {
+    return {
+      type: UPDATE_POSTS,
+      payload: post
+    }
+  }

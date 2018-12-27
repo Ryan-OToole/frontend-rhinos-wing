@@ -20,11 +20,11 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
-import reducer from "./reducers/index"
+import reducer from "./reducers/reducer_only"
 import { Provider } from "react-redux"
 import { BrowserRouter } from 'react-router-dom'
 import { devToolsEnhancer } from 'redux-devtools-extension';
-// import 'semantic-ui-css/semantic.min.css'
+
 
 const store = createStore(reducer, /* preloadedState, */ devToolsEnhancer(
   // Specify name here, actionsBlacklist, actionsCreators and other options if needed

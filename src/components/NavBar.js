@@ -5,19 +5,20 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 const NavBar = (props) => {
   return (
       <Navbar inverse collapseOnSelect>
-  <Navbar.Header>
-    <Navbar.Brand>
-      <a href="#brand">React-Bootstrap</a>
-    </Navbar.Brand>
-    <Navbar.Toggle />
-  </Navbar.Header>
-  <Navbar.Collapse>
+        <Navbar.Header>
+          <Navbar.Brand>
+              <NavLink activeClassName="selected" exact to="/">About</NavLink>
+            </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+      <Navbar.Collapse>
     <Nav>
-      <NavItem eventKey={1} href="#">
-        Link
+      <NavItem eventKey={1} href="/rhinos">
+        Rhinos
       </NavItem>
+
       <NavItem eventKey={2} href="#">
-        Link
+        Wings
       </NavItem>
       <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
         <MenuItem eventKey={3.1}>Action</MenuItem>
@@ -28,17 +29,19 @@ const NavBar = (props) => {
       </NavDropdown>
     </Nav>
     <Nav pullRight>
-      <NavItem eventKey={1} href="#">
-        Link Right
+      <NavItem eventKey={1} href="/register">
+        Register
       </NavItem>
-      <NavItem eventKey={2} href="#">
-        Link Right
+      <NavItem eventKey={2} href="/login">
+        Login
       </NavItem>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
 );
 }
+
+
 
 
 
