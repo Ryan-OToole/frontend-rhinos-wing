@@ -12,10 +12,10 @@ class App extends Component {
       <div>
         <NavBar />
           <Switch>
-            <Route exact path="/" component={Welcome} />
-            <Route path="/login" component={LoginForm} />
-            <Route path="/register" component={RegistrationForm} />
-            <Route exact path="/search" component={SearchBar} />
+              <Route exact path="/" component={(props) => <RegistrationForm {...props} /> }/>
+              <Route path="/login" component={(props) => <RegistrationForm {...props} /> }/>
+              <Route path="/register" component={(props) => <RegistrationForm {...props} /> }/>
+              <Route path="/register" component={(props) => <RegistrationForm {...props} /> }/>
         </Switch>
       </div>
     );
