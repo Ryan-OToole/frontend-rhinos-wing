@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Adapter from './Adapter';
 import { Button } from 'react-bootstrap';
 import { connect } from "react-redux"
-import { currentUser, updateUser } from '../actions/index'
+import { currentUser } from '../actions/index'
 
 
 class Rhinos extends Component {
@@ -13,7 +13,6 @@ class Rhinos extends Component {
   }
 
   handleChange = (event) => {
-    console.log("handling change", event.target.value)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -21,9 +20,9 @@ class Rhinos extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log("inside Rhino current user is:", this.props.currentUser)
     Adapter.postPost(this.state.title, this.state.body, 1)
       .then( post => {
+        console.log("listOfPosts:", this.props.listOfPosts)
         const listOfPostsUpdated = Array.from(this.props.listOfPosts)
         listOfPostsUpdated.unshift(post)
         this.props.updatePostList(listOfPostsUpdated)
