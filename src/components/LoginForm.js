@@ -30,8 +30,7 @@ class LoginForm extends Component {
     .then( json => {
       localStorage.setItem('token', json.token);
       this.props.updateUser(json)
-      console.log("json", json)
-      console.log("currentUser", this.props.currentUser)
+      this.props.history.push("/");
     })
     .catch( err => {
       console.log()
@@ -76,7 +75,7 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
   return {
     updateUser: (user) => {
       dispatch(updateUser(user))
