@@ -1,7 +1,5 @@
 export const UPDATE_CURRENT_USER = 'UPDATE_CURRENT_USER';
 export const UPDATE_POSTS = 'UPDATE_POSTS';
-export const TEST = 'TEST'
-
 
 export function updateUser(user) {
   return {

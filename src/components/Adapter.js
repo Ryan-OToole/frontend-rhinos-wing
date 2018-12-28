@@ -1,6 +1,6 @@
 
 
-const URL = 'http://localhost:3001/posts/'
+const URL = 'http://localhost:3000/posts/'
 
 class Adapter {
   static isLoggedIn() {
@@ -9,7 +9,9 @@ class Adapter {
   static postPost(id, title, body) {
     const config = {
       method: "POST",
-      headers: {'Content-Type':'application/json'},
+      headers: {
+        'Content-Type':'application/json'
+      },
       body: JSON.stringify({
           user_id: id,
           title: title,
@@ -21,4 +23,4 @@ class Adapter {
   }
 }
 
-export default Adapter
+export default Adapter;

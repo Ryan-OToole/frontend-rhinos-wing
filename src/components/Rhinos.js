@@ -13,15 +13,16 @@ class Rhinos extends Component {
   }
 
   handleChange = (event) => {
+    console.log("handling change", event.target.value)
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
   handleSubmit = (event) => {
-    console.log("inside Rhino current user is:", this.props.currentUser)
     event.preventDefault()
-    Adapter.postPost(this.state.title, this.state.body, this.props.currentUser.id)
+    console.log("inside Rhino current user is:", this.props.currentUser)
+    Adapter.postPost(this.state.title, this.state.body, 1)
       .then( post => {
         const listOfPostsUpdated = Array.from(this.props.listOfPosts)
         listOfPostsUpdated.unshift(post)
@@ -39,18 +40,17 @@ class Rhinos extends Component {
            name="title"
            type='text'
            size="30"
-           onChange={this.props.handleChange}
+           onChange={this.handleChange}
            value={this.props.title} /><br/>
          <h3>Body:</h3><textarea
             name="body"
             rows="10"
             cols="50"
-            onChange={this.props.handleChange}
+            onChange={this.handleChange}
             value={this.props.body}></textarea><br/>
-          <Button> Create Rhino's Post </Button>
+          <Button type='submit' > Create Rhino's Post </Button>
         </form>
       </div>
-
     );
   }
 }
