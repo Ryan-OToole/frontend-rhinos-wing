@@ -1,6 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const NavBar = (props) => {

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Adapter from './Adapter';
 import { Button } from 'react-bootstrap';
 import { connect } from "react-redux"
-import { currentUser } from '../actions/index'
+import { updatePostList } from '../actions/index'
+
 
 
 class Rhinos extends Component {
@@ -20,13 +21,12 @@ class Rhinos extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    Adapter.postPost(this.state.title, this.state.body, 1)
+    console.log("id", this.props.currentUser.id)
+    Adapter.postPost(this.props.currentUser.id, this.state.title, this.state.body)
       .then( post => {
-        console.log("listOfPosts:", this.props.listOfPosts)
+        console.log(post)
         const listOfPostsUpdated = Array.from(this.props.listOfPosts)
         listOfPostsUpdated.unshift(post)
-        this.props.updatePostList(listOfPostsUpdated)
-        console.log(this.props.listOfPosts)
       })
   }
 
@@ -56,8 +56,17 @@ class Rhinos extends Component {
 
 function mapStateToProps(state) {
   return {
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
+    listOfPosts: state.listOfPosts
   }
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+      updatePostList: (post) => {
+        dispatch(updatePostList(post))
+      }
+    }
+  }
 
 export default connect(mapStateToProps)(Rhinos)
