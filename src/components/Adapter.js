@@ -7,7 +7,7 @@ class Adapter {
     return !!localStorage.getItem('token')
   };
 
-  static postPost(user_id, title, body) {
+  static postPost(user_id, title, body, rhino) {
     const config = {
       method: "POST",
       headers: {
@@ -17,6 +17,7 @@ class Adapter {
           user_id: user_id,
           title: title,
           body: body,
+          rhino: rhino
       })
     }
     return fetch(URL, config)

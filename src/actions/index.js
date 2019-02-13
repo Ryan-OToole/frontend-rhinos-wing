@@ -9,10 +9,10 @@ export function updateUser(user) {
   };
 }
 
-export function updatePostList(post) {
+export function updatePostList(postsArray) {
     return {
       type: UPDATE_POSTS,
-      payload: post
+      payload: postsArray
     }
   }
 

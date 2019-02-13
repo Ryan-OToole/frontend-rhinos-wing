@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Adapter from './Adapter';
-import { Button } from 'react-bootstrap';
+import { DropdownButton, Dropdown, Button, ButtonToolbar } from 'react-bootstrap';
 import { connect } from "react-redux"
 import { updatePostList } from '../actions/index'
+
 
 
 
@@ -10,7 +11,8 @@ class Rhinos extends Component {
 
   state = {
       title: '',
-      body: ''
+      body: '',
+      rhino: null
   }
 
   handleChange = (event) => {
@@ -22,19 +24,36 @@ class Rhinos extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     console.log("id", this.props.currentUser.id)
-    Adapter.postPost(this.props.currentUser.id, this.state.title, this.state.body)
+    Adapter.postPost(this.props.currentUser.id, this.state.title, this.state.body, this.state.rhino)
       .then( post => {
         console.log(post)
         const listOfPostsUpdated = Array.from(this.props.listOfPosts)
         listOfPostsUpdated.unshift(post)
+        this.props.updatePostList(listOfPostsUpdated)
       })
   }
 
+  handleDropdownChange = (event) => {
+    if (event.target.innerText === "Rhino"){
+          this.setState({
+          rhino: true
+        })
+      } else {
+        this.setState({
+          rhino: false
+        })
+      }
+  }
 
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <h3>Type of Post:</h3>
+          <select onChange={this.handleDropdownChange}>
+            <option value="rhino">Rhino</option>
+            <option value="wing">Wing</option>
+          </select><br />
           <h3>Title:</h3><input id='note-title-input'
            name="title"
            type='text'
@@ -69,4 +88,4 @@ function mapDispatchToProps(dispatch) {
     }
   }
 
-export default connect(mapStateToProps)(Rhinos)
+export default connect(mapStateToProps, mapDispatchToProps)(Rhinos)

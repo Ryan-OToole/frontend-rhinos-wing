@@ -1,33 +1,32 @@
 import React, { Component } from 'react';
-import { updatePostList, setCurrentPost } from '../action/index'
+import { updatePostList, setCurrentPost } from '../actions/index'
 import { connect } from "react-redux"
 import { withRouter } from 'react-router-dom'
-
-
-
+import Adapter from '../components/Adapter'
+import Posts from '../components/Posts'
 
 class PostsContainer extends Component {
 
   componentDidMount() {
-    if(this.props.currentUser) {
-      if(this.props.listOfPosts !== []) {
         Adapter.getPostsAll()
           .then( posts => {
+            console.log("post", posts)
             const postListUpdate = []
             for (let post of posts) {
               postListUpdate.push(post)
-              this.props.updateCurrentPost(post)
+              this.props.setCurrentPost(post)
             }
               this.props.updatePostList(postListUpdate)
           })
         }
-      }
-    }
 
     handlePosts = () => {
-    return this.props.listOfPosts.map( post => {
-      return  <Post post={post} />
-      })
+      if ( this.props.listOfPosts !== undefined ) {
+      return this.props.listOfPosts.map( post => {
+        console.log("post inside Posts", post)
+          return <Posts post={post}/>
+        })
+      }
     }
 
   render() {
@@ -39,14 +38,14 @@ class PostsContainer extends Component {
   }
 }
 
-mapStateToProps(state) {
+function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
     listofPosts: state.listOfPosts
   }
 }
 
-mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     updatePostList: (postsArray) => {
       dispatch(updatePostList(postsArray))

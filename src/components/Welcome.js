@@ -4,7 +4,7 @@ class Welcome extends Component {
   render() {
     return (
       <div>
-        Welcome to The Rhino's Wing!  The Rhino's Wing is based on symbosis, which is the interaction of two different organisms living in close physical association, typically to the advantage of both.
+        Welcome to The Rhino's Wing!  The Rhino's Wing is based on symbiosis, which is the interaction of two different organisms living in close physical association, typically to the advantage of both.
         After finding myself in several situations where I felt I had something of value to provide, with one or two minor stipulations, I realized there was a need for an app that allows users
         to make a posting, search postings, and connect with others to create a symbiotic relationship (like say, the Wing to the Rhino). The app's name (The Rhino's Wing) was borne out of how
         Oxpeckers, or tick birds, sit on the rhino and eat ticks, blood sores, and even warn the rhino of danger.  This relationship is mutually advantageous to both the Rhino and Oxpecker, but for this app
