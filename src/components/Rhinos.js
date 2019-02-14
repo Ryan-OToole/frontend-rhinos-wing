@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Adapter from './Adapter';
-import { DropdownButton, Dropdown, Button, ButtonToolbar } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { connect } from "react-redux"
 import { updatePostList } from '../actions/index'
 
