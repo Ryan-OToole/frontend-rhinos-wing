@@ -14,7 +14,7 @@
   background: #55d6aa;
 }
 
-header::after {
+.header::after {
   content: '';
   display: table;
   clear: both;
@@ -26,6 +26,17 @@ header::after {
 
 .nav {
   float: right;
+}
+
+.nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+  position: absolute;
+  width: 0%;
+  top: 0;
+  transition: all ease-in-out 200ms;
 }
 
 .ul {
@@ -42,4 +53,14 @@ header::after {
   color: #444;
   text-decoration: none;
   font-size: 19px;
+  position: relative;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #444;
+}
+
+.nav a:hover::before {
+  width: 100%;
 }

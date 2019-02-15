@@ -22,22 +22,27 @@ class Rhinos extends Component {
   }
 
   handleSubmit = (event) => {
+    const rhino = this.state.rhino
     event.preventDefault()
-    console.log("id", this.props.currentUser.id)
-    Adapter.postPost(this.props.currentUser.id, this.state.title, this.state.body, this.state.rhino)
+    console.log("before", rhino)
+    Adapter.postPost(this.props.currentUser.id, this.state.title, this.state.body, rhino)
       .then( post => {
         console.log(post)
         const listOfPostsUpdated = Array.from(this.props.listOfPosts)
         listOfPostsUpdated.unshift(post)
         this.props.updatePostList(listOfPostsUpdated)
+        console.log("after", rhino)
       })
   }
 
+
+
   handleDropdownChange = (event) => {
-    if (event.target.innerText === "Rhino"){
+    if (event.target.value === "rhino"){
+      console.log("rhino")
           this.setState({
           rhino: true
-        })
+        }, () => {console.log('state.rhino', this.state.rhino)})
       } else {
         this.setState({
           rhino: false
@@ -51,6 +56,7 @@ class Rhinos extends Component {
         <form onSubmit={this.handleSubmit}>
           <h3>Type of Post:</h3>
           <select onChange={this.handleDropdownChange}>
+            <option value='' defaultValue>Choose Type</option>
             <option value="rhino">Rhino</option>
             <option value="wing">Wing</option>
           </select><br />
