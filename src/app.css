@@ -24,9 +24,7 @@
   float: left;
 }
 
-.nav {
-  float: right;
-}
+
 
 .nav a::before {
   content: '';
@@ -63,4 +61,10 @@
 
 .nav a:hover::before {
   width: 100%;
+}
+
+#searchbar {
+  float: right;
+  width: 300px;
+  padding-top: 35px;
 }
