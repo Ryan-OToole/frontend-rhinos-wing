@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux"
 
 class SearchBar extends Component {
   constructor(props) {
@@ -21,8 +22,8 @@ class SearchBar extends Component {
     return (
       <div>
         <div className="row" />
-     <div id="left" className="col-md-6"></div>
-     <div id="right" className="col-md-6"></div>
+         <div id="left" className="col-md-6"></div>
+         <div id="right" className="col-md-6"></div>
 
         <form onSubmit={this.onFormSubmit} className="input-group">
           <input
@@ -43,5 +44,18 @@ class SearchBar extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    listOfPosts: state.listOfPosts
+  }
+}
 
-export default SearchBar;
+// function mapDispatchToProps(dispatch) = () => {
+//   return {
+//
+//   }
+// }
+
+
+
+export default connect(mapStateToProps)(SearchBar)
