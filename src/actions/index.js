@@ -1,7 +1,6 @@
 export const UPDATE_CURRENT_USER = 'UPDATE_CURRENT_USER';
 export const UPDATE_POSTS = 'UPDATE_POSTS';
-export const TEST = 'TEST'
-
+export const SET_CURRENT_POST = 'SET_CURRENT_POST'
 
 export function updateUser(user) {
   return {
@@ -10,9 +9,16 @@ export function updateUser(user) {
   };
 }
 
-export function updatePostList(post) {
+export function updatePostList(postsArray) {
     return {
       type: UPDATE_POSTS,
+      payload: postsArray
+    }
+  }
+
+  export function setCurrentPost(post) {
+    return {
+      type: SET_CURRENT_POST,
       payload: post
     }
   }

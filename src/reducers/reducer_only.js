@@ -1,8 +1,9 @@
-import { UPDATE_CURRENT_USER, UPDATE_POSTS } from '../actions/index';
+import { UPDATE_CURRENT_USER, UPDATE_POSTS, SET_CURRENT_POST } from '../actions/index';
 
 const defaultState = {
   currentUser: null,
-  listOfPosts: []
+  listOfPosts: [],
+  currentPost: null
 }
 
 const reducer = (state = defaultState, action) => {
@@ -12,6 +13,8 @@ const reducer = (state = defaultState, action) => {
       return {...state, currentUser: action.payload}
     case UPDATE_POSTS:
       return {...state, listOfPosts: action.payload}
+    case SET_CURRENT_POST:
+      return {...state, currentPost: action.payload}
     default:
       return state
   }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { updateUser } from '../actions/index'
 
 class RegistrationForm extends Component {
   state = {
@@ -28,6 +30,8 @@ class RegistrationForm extends Component {
     .then( json => {
       console.log(json)
       localStorage.setItem('token', json.token);
+      this.props.updateUser(json)
+      this.props.history.push("/");
     })
   }
 
@@ -58,4 +62,18 @@ class RegistrationForm extends Component {
   }
 }
 
-export default RegistrationForm;
+function mapStateToProps(state) {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    updateUser: (user) => {
+      dispatch(updateUser(user))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationForm)

@@ -1,48 +1,33 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import '../app.css';
+import SearchBar from '../containers/search_bar'
 
 const NavBar = (props) => {
   return (
-      <Navbar inverse collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-              <NavLink activeClassName="selected" exact to="/">About</NavLink>
-            </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-      <Navbar.Collapse>
-    <Nav>
-      <NavItem eventKey={1} href="/rhinos">
-        Rhinos
-      </NavItem>
+  <div className="body">
+    <header className="header">
+      <div className="container">
+        <img src="https://cdn.dribbble.com/users/64184/screenshots/3003556/plt_mf_soaring_rhino.jpg" alt="logo" className="logo" height="100" width="150"  />
+        <nav className="nav">
+          <SearchBar />
+          <ul className="ul">
 
-      <NavItem eventKey={2} href="#">
-        Wings
-      </NavItem>
-      <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-        <MenuItem eventKey={3.1}>Action</MenuItem>
-        <MenuItem eventKey={3.2}>Another action</MenuItem>
-        <MenuItem eventKey={3.3}>Something else here</MenuItem>
-        <MenuItem divider />
-        <MenuItem eventKey={3.3}>Separated link</MenuItem>
-      </NavDropdown>
-    </Nav>
-    <Nav pullRight>
-      <NavItem eventKey={1} href="/register">
-        Register
-      </NavItem>
-      <NavItem eventKey={2} href="/login">
-        Login
-      </NavItem>
-    </Nav>
-  </Navbar.Collapse>
-</Navbar>
+              <li className="li"><Link to="/">About</Link></li>
+              <li className="li"><Link to="/rhinos">Rhinos</Link></li>
+              <li className="li"><Link to="/wings">Wings</Link></li>
+              <li className="li"><Link to="/login">Login</Link></li>
+              <li className="li"><Link to="/register">Register</Link></li>
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+  </div>
+
+
 );
 }
-
-
-
-
 
 export default NavBar;
