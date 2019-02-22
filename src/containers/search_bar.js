@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { updatePostList } from '../actions/index'
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { term: '' };
+    this.state = {
+      term: '',
+     };
   }
 
   onInputChange = (event) => {
     this.setState({ term: event.target.value });
-  }
+    const postList = this.props.listOfPostsFilter.filter( post => {
+      return post.title.toLowerCase().includes(event.target.value.toLowerCase())
+    })
+    console.log(postList)
+    this.props.updatePostList(postList)
+}
 
   onFormSubmit = (event) => {
     event.preventDefault();
@@ -24,7 +32,7 @@ class SearchBar extends Component {
         <div className="row" />
         <div id="left" className="col-md-6"></div>
         <div id="right" className="col-md-6"></div>
-        
+
         <form onSubmit={this.onFormSubmit} className="input-group">
           <input
           placeholder="Try some shit"
@@ -47,7 +55,16 @@ class SearchBar extends Component {
   function mapStateToProps(state) {
     return {
       currentUser: state.currentUser,
-      listOfPosts: state.listOfPosts
+      listOfPosts: state.listOfPosts,
+      listOfPostsFilter: state.listOfPostsFilter
+    }
+  }
+
+  function mapDispatchToProps(dispatch) {
+    return {
+      updatePostList: (posts) => {
+        dispatch(updatePostList(posts))
+      }
     }
   }
 

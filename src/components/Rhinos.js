@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Adapter from './Adapter';
 import { Button } from 'react-bootstrap';
 import { connect } from "react-redux"
-import { updatePostList } from '../actions/index'
-import SearchBar from '../containers/search_bar'
+import { updatePostList, updatePostListFilter } from '../actions/index'
 import '../app.css';
 
 class Rhinos extends Component {
@@ -31,6 +30,7 @@ class Rhinos extends Component {
         const listOfPostsUpdated = Array.from(this.props.listOfPosts)
         listOfPostsUpdated.unshift(post)
         this.props.updatePostList(listOfPostsUpdated)
+        this.props.updatePostListFilter(listOfPostsUpdated)
         console.log("after", rhino)
       })
       this.setState({posted: true})
@@ -64,6 +64,7 @@ class Rhinos extends Component {
     Adapter.getPostsAll()
       .then(posts => {
         this.props.updatePostList(posts)
+        this.props.updatePostListFilter(posts)
       })
       .then(console.log("posts loaded"))
   }
@@ -111,13 +112,18 @@ class Rhinos extends Component {
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
-    listOfPosts: state.listOfPosts
+    listOfPosts: state.listOfPosts,
+    listOfPostsFilter: state.listOfPostsFilter
   }
 }
+
 function mapDispatchToProps(dispatch) {
     return {
-      updatePostList: (post) => {
-        dispatch(updatePostList(post))
+      updatePostList: (posts) => {
+        dispatch(updatePostList(posts))
+      },
+      updatePostListFilter: (posts) => {
+        dispatch(updatePostListFilter(posts))
       }
     }
   }
