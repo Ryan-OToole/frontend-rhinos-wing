@@ -33,6 +33,11 @@ class Adapter {
     return fetch(URL)
             .then( r => r.json() )
   }
+
+  static destroyPost(id) {
+    return fetch(`${URL}/${id}`, {method:'DELETE'})
+            .then( r => r.json() )
+  }
 }
 
 export default Adapter;

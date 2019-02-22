@@ -3,16 +3,16 @@ import Adapter from './Adapter';
 import { Button } from 'react-bootstrap';
 import { connect } from "react-redux"
 import { updatePostList } from '../actions/index'
-
-
-
+import SearchBar from '../containers/search_bar'
+import '../app.css';
 
 class Rhinos extends Component {
 
   state = {
       title: '',
       body: '',
-      rhino: null
+      rhino: null,
+      posted: false
   }
 
   handleChange = (event) => {
@@ -33,8 +33,18 @@ class Rhinos extends Component {
         this.props.updatePostList(listOfPostsUpdated)
         console.log("after", rhino)
       })
+      this.setState({posted: true})
   }
 
+  newPost = (event) => {
+    event.preventDefault()
+    this.setState({
+      title: '',
+      body: '',
+      rhino: null,
+      posted: false
+    })
+  }
 
 
   handleDropdownChange = (event) => {
@@ -50,8 +60,26 @@ class Rhinos extends Component {
       }
   }
 
+  componentDidMount() {
+    Adapter.getPostsAll()
+      .then(posts => {
+        this.props.updatePostList(posts)
+      })
+      .then(console.log("posts loaded"))
+  }
+
   render() {
     return (
+
+      <div>
+      {this.state.posted === true ?
+        <div>
+          <button onClick={this.newPost}>Create new post!</button>
+          <h1>Post Type: {this.state.rhino ? 'Rhino' : 'Wing'} </h1>
+          <h3>Title: {this.state.title} </h3>
+          <p>Body: {this.state.body} </p>
+        </div>
+        :
       <div>
         <form onSubmit={this.handleSubmit}>
           <h3>Type of Post:</h3>
@@ -75,17 +103,17 @@ class Rhinos extends Component {
           <Button type='submit' > Create Rhino's Post </Button>
         </form>
       </div>
+    }
+    </div>
     );
   }
 }
-
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
     listOfPosts: state.listOfPosts
   }
 }
-
 function mapDispatchToProps(dispatch) {
     return {
       updatePostList: (post) => {
@@ -93,5 +121,4 @@ function mapDispatchToProps(dispatch) {
       }
     }
   }
-
 export default connect(mapStateToProps, mapDispatchToProps)(Rhinos)

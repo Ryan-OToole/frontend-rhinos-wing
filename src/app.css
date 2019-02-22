@@ -6,7 +6,7 @@
 }
 
 .container {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -22,10 +22,6 @@
 
 .logo {
   float: left;
-}
-
-.nav {
-  float: right;
 }
 
 .nav a::before {
@@ -63,4 +59,10 @@
 
 .nav a:hover::before {
   width: 100%;
+}
+
+#searchbar {
+  float: right;
+  width: 300px;
+  padding-top: 35px;
 }
