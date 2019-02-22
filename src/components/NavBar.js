@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../app.css';
+import SearchBar from '../containers/search_bar'
 
 const NavBar = (props) => {
   return (
@@ -9,6 +10,7 @@ const NavBar = (props) => {
       <div className="container">
         <img src="https://cdn.dribbble.com/users/64184/screenshots/3003556/plt_mf_soaring_rhino.jpg" alt="logo" className="logo" height="100" width="150"  />
         <nav className="nav">
+          <SearchBar />
           <ul className="ul">
 
               <li className="li"><Link to="/">About</Link></li>
@@ -21,6 +23,7 @@ const NavBar = (props) => {
         </nav>
       </div>
     </header>
+
   </div>
 
 
