@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { updateUser } from '../actions/index'
+import '../app.css';
 
 class LoginForm extends Component {
   state = {
@@ -43,28 +44,17 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <div className="login">
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            onChange={this.handleChange}
-            value={this.state.username}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={this.handleChange}
-            value={this.state.password}
-          />
-          <input type="submit" value="Login" />
-        </form>
-      </div>
-    )
+      <Fragment>
+        <header>
+          <title>Please Login</title>
+        </header>
+        <body className="login-body">
+          <div className="login-box">
+            <img src="https://png.pngtree.com/png-vector/20190225/ourlarge/pngtree-vector-female-avatar-icon-png-image_702460.jpg" className="avatar" />
+          </div>
+        </body>
+      </Fragment>
+    );
   }
 }
 
