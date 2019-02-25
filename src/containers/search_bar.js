@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updatePostList } from '../actions/index'
-
+import { updatePostList } from '../actions/index';
+import { Button } from 'react-bootstrap';
 class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -42,7 +42,7 @@ class SearchBar extends Component {
 
            />
           <span className="input-group-btn">
-            <button type="submit" className="btn btn-secondary">Submit</button>
+            <Button variant="dark" type="submit">Submit</Button>
           </span>
         </form>
 

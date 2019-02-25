@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 import { updatePostList, updatePostListFilter } from '../actions/index'
 import '../app.css';
 
-class Rhinos extends Component {
+class Stories extends Component {
 
   state = {
       title: '',
@@ -127,4 +127,4 @@ function mapDispatchToProps(dispatch) {
       }
     }
   }
-export default connect(mapStateToProps, mapDispatchToProps)(Rhinos)
+export default connect(mapStateToProps, mapDispatchToProps)(Stories)

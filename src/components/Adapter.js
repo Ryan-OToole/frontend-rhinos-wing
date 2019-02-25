@@ -38,6 +38,12 @@ class Adapter {
     return fetch(`${URL}/${id}`, {method:'DELETE'})
             .then( r => r.json() )
   }
+
+  static isLoggedIn() {
+    return !!localStorage.getItem('token');
+  }
+
 }
+
 
 export default Adapter;
