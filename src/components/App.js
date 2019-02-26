@@ -16,8 +16,8 @@ class App extends Component {
               <Route exact path="/" component={(props) => <Welcome {...props} /> }/>
               <Route path="/login" component={(props) => <LoginForm {...props} /> }/>
               <Route path="/register" component={(props) => <RegistrationForm {...props} /> }/>
-              <Route path="/stories" component={(props) => <Stories {...props} /> } />
-        </Switch>
+              <Route path="/stories" component={(props) => <Stories {...props} /> }/>
+          </Switch>
       </div>
     );
   }

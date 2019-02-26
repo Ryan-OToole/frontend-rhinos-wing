@@ -42,6 +42,10 @@ class LoginForm extends Component {
     });
   }
 
+  componentWillMount() {
+    document.body.className = 'background_image'
+  }
+
   render() {
     return (
       <Fragment>
@@ -50,7 +54,15 @@ class LoginForm extends Component {
         </header>
         <body className="login-body">
           <div className="login-box">
-            <img src="https://png.pngtree.com/png-vector/20190225/ourlarge/pngtree-vector-female-avatar-icon-png-image_702460.jpg" className="avatar" />
+            <img alt="" src="https://png.pngtree.com/png-vector/20190225/ourlarge/pngtree-vector-female-avatar-icon-png-image_702460.jpg" className="avatar" />
+            <h1 className="h1">Login Here</h1>
+            <form onSubmit={this.handleSubmit}>
+              <p>Username:</p>
+              <input type="text" name="username" placeholder="Enter Username" onChange={this.handleChange} value={this.state.username} />
+              <p>Password:</p>
+              <input type="password" name="password" placeholder="Enter Password" onChange={this.handleChange} value={this.state.password} />
+              <input type="submit" name="submit" value="login" />
+            </form>
           </div>
         </body>
       </Fragment>
