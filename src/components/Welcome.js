@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Adapter from './Adapter';
+import { updatePostList, updatePostListFilter } from '../actions/index'
 
 class Welcome extends Component {
+
+  componentDidMount() {
+    Adapter.getPostsAll()
+      .then(posts => {
+        console.log("inside animal, posts", posts)
+        this.props.updatePostList(posts)
+        this.props.updatePostListFilter(posts)
+      })
+      .then(console.log("posts loaded"))
+  }
+
   render() {
     return (
       <div>
@@ -15,4 +29,15 @@ class Welcome extends Component {
   }
 }
 
-export default Welcome;
+function mapDispatchToProps(dispatch) {
+    return {
+      updatePostList: (posts) => {
+        dispatch(updatePostList(posts))
+      },
+      updatePostListFilter: (posts) => {
+        dispatch(updatePostListFilter(posts))
+      }
+    }
+  }
+
+export default connect(null, mapDispatchToProps)(Welcome);

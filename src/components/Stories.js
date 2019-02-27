@@ -3,6 +3,7 @@ import Adapter from './Adapter';
 import { Button } from 'react-bootstrap';
 import { connect } from "react-redux"
 import { updatePostList, updatePostListFilter } from '../actions/index'
+import Animal from './Animal'
 import '../app.css';
 
 class Stories extends Component {
@@ -60,15 +61,6 @@ class Stories extends Component {
       }
   }
 
-  componentDidMount() {
-    Adapter.getPostsAll()
-      .then(posts => {
-        this.props.updatePostList(posts)
-        this.props.updatePostListFilter(posts)
-      })
-      .then(console.log("posts loaded"))
-  }
-
   render() {
     return (
 
@@ -83,7 +75,7 @@ class Stories extends Component {
         :
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h3>Type of Post:</h3>
+          <h3>Feeling like an animal?</h3>
           <select onChange={this.handleDropdownChange}>
             <option value='' defaultValue>Choose Type</option>
             <option value="rhino">Rhino</option>
@@ -105,6 +97,7 @@ class Stories extends Component {
         </form>
       </div>
     }
+    <Animal />
     </div>
     );
   }
