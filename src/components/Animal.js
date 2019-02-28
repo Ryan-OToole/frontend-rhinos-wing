@@ -12,7 +12,6 @@ class Animal extends Component {
       })
     }
 
-
   render() {
     return (
       <div>

@@ -1,23 +1,12 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Adapter from './Adapter';
-import { updatePostList, updatePostListFilter } from '../actions/index'
+import '../app.css';
+import Animal from './Animal.js'
 
 class Welcome extends Component {
 
-  componentDidMount() {
-    Adapter.getPostsAll()
-      .then(posts => {
-        console.log("inside animal, posts", posts)
-        this.props.updatePostList(posts)
-        this.props.updatePostListFilter(posts)
-      })
-      .then(console.log("posts loaded"))
-  }
-
   render() {
     return (
-      <div>
+      <div className="welcome">
         Welcome to The Rhino's Wing!  The Rhino's Wing is based on symbiosis, which is the interaction of two different organisms living in close physical association, typically to the advantage of both.
         After finding myself in several situations where I felt I had something of value to provide, with one or two minor stipulations, I realized there was a need for an app that allows users
         to make a posting, search postings, and connect with others to create a symbiotic relationship (like say, the Wing to the Rhino). The app's name (The Rhino's Wing) was borne out of how
@@ -29,15 +18,4 @@ class Welcome extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-      updatePostList: (posts) => {
-        dispatch(updatePostList(posts))
-      },
-      updatePostListFilter: (posts) => {
-        dispatch(updatePostListFilter(posts))
-      }
-    }
-  }
-
-export default connect(null, mapDispatchToProps)(Welcome);
+export default Welcome;

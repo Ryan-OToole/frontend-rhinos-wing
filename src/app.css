@@ -150,11 +150,22 @@
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 35%;
+  width: 75%;
   length: 2em;
+  float: right;
 }
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.welcome {
+  border: 5px outset 	greenyellow;
+  transition: 0.3s;
+  float: right;
+  margin-left: 33%;
+  margin-right: 33%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
