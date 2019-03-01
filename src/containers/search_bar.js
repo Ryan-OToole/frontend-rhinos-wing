@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updatePostList } from '../actions/index';
 import { Button } from 'react-bootstrap';
+import '../app.css'
 class SearchBar extends Component {
   constructor(props) {
     super(props);

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import LoginForm from './LoginForm'
 import RegistrationForm from './RegistrationForm'
-import Stories from './Stories'
+import CreateStory from './CreateStory'
 import NavBar from './NavBar'
-import Welcome from './Welcome'
+import Home from './Home'
 import AnimalsContainer from '../containers/AnimalsContainer'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
@@ -13,10 +13,10 @@ class App extends Component {
       <div>
         <NavBar />
           <Switch>
-              <Route exact path="/" component={(props) => <Welcome {...props} /> }/>
+              <Route exact path="/" component={(props) => <Home {...props} /> }/>
               <Route path="/login" component={(props) => <LoginForm {...props} /> }/>
               <Route path="/register" component={(props) => <RegistrationForm {...props} /> }/>
-              <Route path="/stories" component={(props) => <Stories {...props} /> }/>
+              <Route path="/createStory" component={(props) => <CreateStory {...props} /> }/>
               <Route path="/animalsContainer" components={(props) => <AnimalsContainer {...props} /> } />
           </Switch>
       </div>

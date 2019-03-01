@@ -1,7 +1,5 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Adapter from './Adapter';
-import { updatePostList, updatePostListFilter } from '../actions/index'
 import Animalito from './Animalito'
 
 class Animal extends Component {

@@ -6,7 +6,7 @@ import { updatePostList, updatePostListFilter } from '../actions/index'
 import Animal from './Animal'
 import '../app.css';
 
-class Stories extends Component {
+class CreateStory extends Component {
 
   state = {
       title: '',
@@ -97,7 +97,6 @@ class Stories extends Component {
         </form>
       </div>
     }
-    <Animal />
     </div>
     );
   }
@@ -120,4 +119,4 @@ function mapDispatchToProps(dispatch) {
       }
     }
   }
-export default connect(mapStateToProps, mapDispatchToProps)(Stories)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateStory)

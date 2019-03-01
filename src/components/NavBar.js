@@ -20,12 +20,14 @@ class NavBar extends Component {
             <SearchBar />
             { Adapter.isLoggedIn() ?
               <ul className="ul">
-                  <li className="li"><Link to="/stories">Create Post</Link></li>
+                  <li  className="li"><Link to="/">Home</Link></li>
+                  <li className="li"><Link to="/createStory">Create Story</Link></li>
                   <li className="li" onClick={this.handleClick}><Link to="/login">Logout</Link></li>
               </ul>
                 :
               <ul className="ul">
-                  <li className="li"><Link to="/stories">Create Post</Link></li>
+                  <li  className="li"><Link to="/">Home</Link></li>
+                  <li className="li"><Link to="/createStory">Create Story</Link></li>
                   <li className="li"><Link to="/login">Login</Link></li>
               </ul>
             }

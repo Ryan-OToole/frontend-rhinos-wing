@@ -11,7 +11,7 @@
 }
 
 .header {
-  background: #55d6aa;
+  background: peru;
 }
 
 .header::after {
@@ -77,7 +77,8 @@
 }
 
 .background_image {
-  background: url('https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg')
+  background: url('https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg');
+  opacity: 0.8;
 }
 
 .login-box {
@@ -150,9 +151,15 @@
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 75%;
+  width: 100%;
   length: 2em;
   float: right;
+  background: white;
+  border: 1px solid;
+}
+
+.card > h3 {
+  text-align: center;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -160,12 +167,25 @@
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.welcome {
-  border: 5px outset 	greenyellow;
+.home {
+  border: 2px outset 	saddlebrown;
   transition: 0.3s;
-  float: right;
-  margin-left: 33%;
-  margin-right: 33%;
+  float: left;
+  width: 30.5%;
   padding-left: 5px;
   padding-right: 5px;
+  background: white;
+}
+
+.stories {
+  float: right;
+  width: 30.5%;
+}
+
+#searchbar > form > input {
+  background: black;
+  color: white;
+}
+* {
+  color: gray;
 }
