@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updatePostList } from '../actions/index';
 import { Button } from 'react-bootstrap';
-import '../app.css'
+import '../css/App.css';
+
 class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +37,7 @@ class SearchBar extends Component {
 
         <form onSubmit={this.onFormSubmit} className="input-group">
           <input
-          placeholder="Try some shit"
+          placeholder="Try something yo"
           className="form-control"
           value={this.state.term}
           onChange={this.onInputChange}

@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { updateUser } from '../actions/index'
-import '../app.css';
+import '../css/App.css';
+
+
 
 class LoginForm extends Component {
   state = {

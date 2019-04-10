@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import LoginForm from './LoginForm'
-import RegistrationForm from './RegistrationForm'
-import CreateStory from './CreateStory'
-import NavBar from './NavBar'
-import Home from './Home'
-import AnimalsContainer from '../containers/AnimalsContainer'
-import { Route, Switch, withRouter } from 'react-router-dom'
+import LoginForm from './LoginForm';
+import RegistrationForm from './RegistrationForm';
+import CreateStory from './CreateStory';
+import NavBar from './NavBar';
+import Home from './Home';
+import AnimalsContainer from '../containers/AnimalsContainer';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import Welcome from './Welcome';
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
       <div>
         <NavBar />
           <Switch>
-              <Route exact path="/" component={(props) => <Home {...props} /> }/>
+              <Route exact path="/" component={(props) => <Welcome {...props} /> }/>
               <Route path="/login" component={(props) => <LoginForm {...props} /> }/>
               <Route path="/register" component={(props) => <RegistrationForm {...props} /> }/>
               <Route path="/createStory" component={(props) => <CreateStory {...props} /> }/>

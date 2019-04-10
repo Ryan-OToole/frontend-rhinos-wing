@@ -1,9 +1,7 @@
-
-
 const URL = 'http://localhost:3000/posts/'
 
 class Adapter {
-  
+
   static isLoggedIn() {
     return !!localStorage.getItem('token')
   };

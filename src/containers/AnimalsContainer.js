@@ -8,10 +8,8 @@ import Animal from '../components/Animal'
 class AnimalsContainer extends Component {
 
   componentDidMount() {
-    console.log("inside PostsContainer")
         Adapter.getPostsAll()
           .then( posts => {
-            console.log("inside PostsContainer", posts)
               this.props.updatePostList(posts)
               this.props.updatePostListFilter(posts)
           });
