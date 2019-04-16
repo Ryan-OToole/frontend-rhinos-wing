@@ -11,7 +11,7 @@
 }
 
 .header {
-  background: #55d6aa;
+  background: $color-peru;
 }
 
 .header::after {
@@ -24,34 +24,15 @@
   float: left;
 }
 
-
-
 .nav a::before {
   content: '';
   display: block;
-  height: 5px;
+  height: .5rem;
   background-color: #444;
   position: absolute;
   width: 0%;
   top: 0;
   transition: all ease-in-out 200ms;
-}
-
-.ul {
-  margin: 0;
-  padding: 0;
-  list-style: none
-}
-
-.li {
-  display: inline-block;
-  margin-left: 40px;
-  padding-top: 35px;
-  text-transform: uppercase;
-  color: #444;
-  text-decoration: none;
-  font-size: 19px;
-  position: relative;
 }
 
 .nav a {
@@ -65,6 +46,42 @@
 
 #searchbar {
   float: right;
-  width: 300px;
-  padding-top: 35px;
+  width: 30rem;
+  padding-top: 3.5rem;
+}
+
+#searchbar > form > input {
+  background: $color-black;
+  color: $color-white;
+}
+* {
+  color: gray;
+}
+
+.ul {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+.li {
+  display: inline-block;
+  margin-left: 4rem;
+  padding-top: 3.5rem;
+  text-transform: uppercase;
+  color: #444;
+  text-decoration: none;
+  font-size: 1.9rem;
+  position: relative;
+}
+
+.home {
+  border: 2px outset 	saddlebrown;
+  transition: 0.3s;
+  float: left;
+  width: 30.5%;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  background: rgba($color-black, 0.25);
+  color: $color-white;
 }

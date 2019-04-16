@@ -1,8 +1,7 @@
-
-
 const URL = 'http://localhost:3000/posts/'
 
 class Adapter {
+
   static isLoggedIn() {
     return !!localStorage.getItem('token')
   };
@@ -33,6 +32,12 @@ class Adapter {
     return fetch(URL)
             .then( r => r.json() )
   }
+
+  static destroyPost(id) {
+    return fetch(`${URL}/${id}`, {method:'DELETE'})
+            .then( r => r.json() )
+  }
 }
+
 
 export default Adapter;

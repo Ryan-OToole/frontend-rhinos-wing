@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux"
-import '../app.css';
-
+import { connect } from 'react-redux';
+import { updatePostList } from '../actions/index';
+import { Button } from 'react-bootstrap';
+import '../css/App.css';
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { term: '' };
+    this.state = {
+      term: '',
+     };
   }
 
   onInputChange = (event) => {
     this.setState({ term: event.target.value });
-  }
+    const postList = this.props.listOfPostsFilter.filter( post => {
+      return post.title.toLowerCase().includes(event.target.value.toLowerCase())
+    })
+    console.log(postList)
+    this.props.updatePostList(postList)
+}
 
   onFormSubmit = (event) => {
     event.preventDefault();
@@ -24,19 +32,19 @@ class SearchBar extends Component {
     return (
       <div id="searchbar">
         <div className="row" />
-         <div id="left" className="col-md-6"></div>
-         <div id="right" className="col-md-6"></div>
+        <div id="left" className="col-md-6"></div>
+        <div id="right" className="col-md-6"></div>
 
         <form onSubmit={this.onFormSubmit} className="input-group">
           <input
-          placeholder="Try some shit"
+          placeholder="Try something yo"
           className="form-control"
           value={this.state.term}
           onChange={this.onInputChange}
 
            />
           <span className="input-group-btn">
-            <button type="submit" className="btn btn-secondary">Submit</button>
+            <Button variant="dark" type="submit">Submit</Button>
           </span>
         </form>
 
@@ -46,18 +54,20 @@ class SearchBar extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    listOfPosts: state.listOfPosts
+  function mapStateToProps(state) {
+    return {
+      currentUser: state.currentUser,
+      listOfPosts: state.listOfPosts,
+      listOfPostsFilter: state.listOfPostsFilter
+    }
   }
-}
 
-// function mapDispatchToProps(dispatch) = () => {
-//   return {
-//
-//   }
-// }
+  function mapDispatchToProps(dispatch) {
+    return {
+      updatePostList: (posts) => {
+        dispatch(updatePostList(posts))
+      }
+    }
+  }
 
-
-
-export default connect(mapStateToProps)(SearchBar)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)

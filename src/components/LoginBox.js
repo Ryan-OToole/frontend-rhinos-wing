@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { updateUser } from '../actions/index'
 import '../css/App.css';
 
-
-
-class LoginForm extends Component {
+class LoginBox extends Component {
   state = {
     username: "",
     password: "",
@@ -44,26 +42,15 @@ class LoginForm extends Component {
     });
   }
 
-  componentWillMount() {
-    document.body.className = 'background_image'
-  }
-
   render() {
     return (
       <Fragment>
-        <header>
-          <title>Please Login</title>
-        </header>
-        <div className="login-body">
-          <div className="login-box">
-            <img alt="" src="https://png.pngtree.com/png-vector/20190225/ourlarge/pngtree-vector-female-avatar-icon-png-image_702460.jpg" className="avatar" />
-            <h1 className="h1">Login Here</h1>
-            <form onSubmit={this.handleSubmit}>
-              <p>Username:</p>
-              <input type="text" name="username" placeholder="Enter Username" onChange={this.handleChange} value={this.state.username} />
-              <p>Password:</p>
-              <input type="password" name="password" placeholder="Enter Password" onChange={this.handleChange} value={this.state.password} />
-              <input type="submit" name="submit" value="login" />
+        <div>
+          <div>
+            <form className="login-form-welcome" onSubmit={this.handleSubmit}>
+              <input type="text" name="username" className="login-username-welcome welcome" placeholder="Phone, email, or username" onChange={this.handleChange} value={this.state.username} />
+              <input type="text" name="password" className="login-password-welcome welcome" placeholder="Password" onChange={this.handleChange} value={this.state.password} />
+              <input type="submit" name="submit" className="login-button-welcome welcome" value="login"  />
             </form>
           </div>
         </div>
@@ -87,4 +74,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginBox)

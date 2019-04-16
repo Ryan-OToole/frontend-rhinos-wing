@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-// import SearchBar from '../containers/search_bar'
-import LoginForm from './LoginForm'
-import RegistrationForm from './RegistrationForm'
-import Rhinos from './Rhinos'
-import NavBar from './NavBar'
-import Welcome from './Welcome'
-import { Route, Switch, withRouter } from 'react-router-dom'
+import LoginForm from './LoginForm';
+import RegistrationForm from './RegistrationForm';
+import CreateStory from './CreateStory';
+import NavBar from './NavBar';
+import AnimalsContainer from '../containers/AnimalsContainer';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import Welcome from './Welcome';
 
 class App extends Component {
   render() {
@@ -16,8 +16,9 @@ class App extends Component {
               <Route exact path="/" component={(props) => <Welcome {...props} /> }/>
               <Route path="/login" component={(props) => <LoginForm {...props} /> }/>
               <Route path="/register" component={(props) => <RegistrationForm {...props} /> }/>
-              <Route path="/rhinos" component={(props) => <Rhinos {...props} /> } />
-        </Switch>
+              <Route path="/createStory" component={(props) => <CreateStory {...props} /> }/>
+              <Route path="/animalsContainer" components={(props) => <AnimalsContainer {...props} /> } />
+          </Switch>
       </div>
     );
   }

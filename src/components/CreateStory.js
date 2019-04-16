@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Adapter from './Adapter';
 import { Button } from 'react-bootstrap';
-import { connect } from "react-redux"
-import { updatePostList } from '../actions/index'
-import SearchBar from '../containers/search_bar'
-import '../app.css';
+import { connect } from "react-redux";
+import { updatePostList, updatePostListFilter } from '../actions/index';
+import '../css/App.css';
 
-class Rhinos extends Component {
+
+class CreateStory extends Component {
 
   state = {
       title: '',
@@ -31,6 +31,7 @@ class Rhinos extends Component {
         const listOfPostsUpdated = Array.from(this.props.listOfPosts)
         listOfPostsUpdated.unshift(post)
         this.props.updatePostList(listOfPostsUpdated)
+        this.props.updatePostListFilter(listOfPostsUpdated)
         console.log("after", rhino)
       })
       this.setState({posted: true})
@@ -67,14 +68,14 @@ class Rhinos extends Component {
       {this.state.posted === true ?
         <div>
           <button onClick={this.newPost}>Create new post!</button>
-          <h1>Post Type: {this.state.rhino ? 'Rhino' : 'Wing'}</h1>
-          <h3>Title: {this.state.title}</h3>
-          <p>Body: {this.state.body}</p>
+          <h1>Post Type: {this.state.rhino ? 'Rhino' : 'Wing'} </h1>
+          <h3>Title: {this.state.title} </h3>
+          <p>Body: {this.state.body} </p>
         </div>
         :
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h3>Type of Post:</h3>
+          <h3>Feeling like an animal?</h3>
           <select onChange={this.handleDropdownChange}>
             <option value='' defaultValue>Choose Type</option>
             <option value="rhino">Rhino</option>
@@ -100,20 +101,22 @@ class Rhinos extends Component {
     );
   }
 }
-
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
-    listOfPosts: state.listOfPosts
+    listOfPosts: state.listOfPosts,
+    listOfPostsFilter: state.listOfPostsFilter
   }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-      updatePostList: (post) => {
-        dispatch(updatePostList(post))
+      updatePostList: (posts) => {
+        dispatch(updatePostList(posts))
+      },
+      updatePostListFilter: (posts) => {
+        dispatch(updatePostListFilter(posts))
       }
     }
   }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Rhinos)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateStory)
