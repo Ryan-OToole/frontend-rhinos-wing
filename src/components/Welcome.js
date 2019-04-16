@@ -37,8 +37,10 @@ class Welcome extends Component {
           <div className="welcome-greeting">See What's Happening in your neighborhood right now</div>
         </div>
       </div>
+
     );
   }
+
 }
 
 export default Welcome;

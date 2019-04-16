@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateUser } from '../actions/index'
+import { updateUser } from '../actions/index';
 
 class RegistrationForm extends Component {
   state = {

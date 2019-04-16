@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../app.css';
-import SearchBar from '../containers/search_bar'
-import Adapter from './Adapter'
+import '../css/App.css';
+import SearchBar from '../containers/search_bar';
+import Adapter from './Adapter';
 
 class NavBar extends Component {
 

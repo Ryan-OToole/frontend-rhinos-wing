@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import { updatePostList, updatePostListFilter } from '../actions/index'
-import { connect } from "react-redux"
-import { withRouter } from 'react-router-dom'
-import Adapter from '../components/Adapter'
-import Animal from '../components/Animal'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import Adapter from '../components/Adapter';
+import Animal from '../components/Animal';
 
 class AnimalsContainer extends Component {
 
   componentDidMount() {
-    console.log("inside PostsContainer")
         Adapter.getPostsAll()
           .then( posts => {
-            console.log("inside PostsContainer", posts)
               this.props.updatePostList(posts)
               this.props.updatePostListFilter(posts)
           });
