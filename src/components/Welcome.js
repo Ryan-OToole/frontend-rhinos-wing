@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import '../css/icon-font.css';
-import RegistrationForm from './RegistrationForm'
-import LoginBox from './LoginBox'
+import RegistrationForm from './RegistrationForm';
+import LoginBox from './LoginBox';
 
 class Welcome extends Component {
 
