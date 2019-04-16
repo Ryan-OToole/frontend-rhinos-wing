@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import '../css/icon-font.css';
 import RegistrationForm from './RegistrationForm'
+import LoginBox from './LoginBox'
 
 class Welcome extends Component {
 
@@ -28,7 +29,11 @@ class Welcome extends Component {
           </div>
         </div>
         <div className="col-2-of-2">
-          <RegistrationForm />
+          <div className="login-welcome-page">
+            <LoginBox />
+          </div>
+          <img src="https://cdn.dribbble.com/users/64184/screenshots/3003556/plt_mf_soaring_rhino.jpg" alt="logo" className="logo-welcome" />
+          <div className="welcome-greeting">See What's Happening in your neighborhood right now</div>
         </div>
       </div>
 
