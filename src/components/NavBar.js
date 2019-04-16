@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import '../app.css';
+import '../css/App.css';
 import SearchBar from '../containers/search_bar'
 import Adapter from './Adapter'
 

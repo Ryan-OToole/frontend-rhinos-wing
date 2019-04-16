@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Adapter from './Adapter';
 import { Button } from 'react-bootstrap';
-import { connect } from "react-redux"
-import { updatePostList, updatePostListFilter } from '../actions/index'
-import Animal from './Animal'
-import '../app.css';
+import { connect } from "react-redux";
+import { updatePostList, updatePostListFilter } from '../actions/index';
+import '../css/App.css';
+
 
 class CreateStory extends Component {
 

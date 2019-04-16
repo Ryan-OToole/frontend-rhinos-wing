@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Animalito from './Animalito'
+import Animalito from './Animalito';
 
 class Animal extends Component {
 
