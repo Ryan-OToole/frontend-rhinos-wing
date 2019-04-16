@@ -2,22 +2,27 @@
   margin: 0;
   background: #222;
   font-family: 'Work Sans', sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+}
 
 .container {
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .header {
-  background: peru; }
+  background: peru;
+}
 
 .header::after {
   content: '';
   display: table;
-  clear: both; }
+  clear: both;
+}
 
 .logo {
-  float: left; }
+  float: left;
+}
 
 .nav a::before {
   content: '';
@@ -27,12 +32,14 @@
   position: absolute;
   width: 0%;
   top: 0;
-  transition: all ease-in-out 200ms; }
+  transition: all ease-in-out 200ms;
+}
 
 .ul {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none
+}
 
 .li {
   display: inline-block;
@@ -42,31 +49,37 @@
   color: #444;
   text-decoration: none;
   font-size: 19px;
-  position: relative; }
+  position: relative;
+}
 
 .nav a {
   text-decoration: none;
-  color: #444; }
+  color: #444;
+}
 
 .nav a:hover::before {
-  width: 100%; }
+  width: 100%;
+}
 
 #searchbar {
   float: right;
   width: 300px;
-  padding-top: 35px; }
+  padding-top: 35px;
+}
 
 .login-body {
   margin: 0;
   padding: 0;
-  background: url("https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg");
+  background: url('https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg');
   background-size: cover;
   background-position: center;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+}
 
 .background_image {
-  background: url("https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg");
-  opacity: 0.8; }
+  background: url('https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg');
+  opacity: 0.8;
+}
 
 .login-box {
   width: 320px;
@@ -78,7 +91,8 @@
   position: absolute;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
-  padding: 70px 30px; }
+  padding: 70px 30px;
+}
 
 .avatar {
   width: 100px;
@@ -86,22 +100,26 @@
   border-radius: 50%;
   position: absolute;
   top: -50px;
-  left: calc(50% - 50px); }
+  left: calc(50% - 50px);
+}
 
 .h1 {
   margin: 0;
   padding: 0 0 20px;
   text-align: center;
-  font-size: 22px; }
+  font-size: 22px;
+}
 
-.login-box p {
+.login-box p{
   margin: 0;
   padding: 0;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
-.login-box input {
+.login-box input{
   width: 100%;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+}
 
 .login-box input[type="text"], input[type="password"] {
   border: none;
@@ -110,7 +128,8 @@
   outline: none;
   height: 40px;
   color: #fff;
-  font-size: 16px; }
+  font-size: 16px;
+}
 
 .login-box input[type="submit"] {
   border: none;
@@ -119,33 +138,39 @@
   background: #1c8adb;
   color: #fff;
   font-size: 18px;
-  border-radius: 20px; }
+  border-radius: 20px;
+}
 
 .login-box input[type="submit"]:hover {
   cursor: pointer;
   background: #39dc79;
-  color: 000; }
+  color: 000;
+}
 
 .card {
   /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 100%;
   length: 2em;
   float: right;
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid;
-  color: #fff; }
+  color: white;
+}
 
 .card-body {
-  color: #fff; }
+  color: white;
+}
 
 .card > h3 {
-  text-align: center; }
+  text-align: center;
+}
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
 
 .home {
   border: 2px outset 	saddlebrown;
@@ -155,46 +180,22 @@
   padding-left: 5px;
   padding-right: 5px;
   background: rgba(0, 0, 0, 0.25);
-  color: #fff; }
+  color: white;
+}
 
 .stories {
   float: right;
-  width: 30.5%; }
+  width: 30.5%;
+}
 
 #searchbar > form > input {
-  background: #000;
-  color: #fff; }
-
+  background: black;
+  color: white;
+}
 * {
-  color: gray; }
+  color: gray;
+}
 
 .h3-home {
-  text-align: center; }
-
-.col-1-of-2 {
-  float: left;
-  width: 50%; }
-
-.col-2-of-2 {
-  float: right;
-  width: 50%; }
-
-.card__picture {
-  background-size: cover;
-  height: 750px;
-  width: 100%;
-  background-blend-mode: screen;
-  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg"); }
-
-.card__picture-text {
-  padding: 15px;
-  text-align: center;
-  font-size: 28px;
-  font-weight: 300;
-  color: #fff;
-  top: 120px;
-  right: 20px;
-  width: 75%; }
-
-.card__picture-text-holder {
-  padding: 100px; }
+  text-align: center
+}

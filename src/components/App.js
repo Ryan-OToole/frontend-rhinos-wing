@@ -3,7 +3,6 @@ import LoginForm from './LoginForm';
 import RegistrationForm from './RegistrationForm';
 import CreateStory from './CreateStory';
 import NavBar from './NavBar';
-import Home from './Home';
 import AnimalsContainer from '../containers/AnimalsContainer';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Welcome from './Welcome';
