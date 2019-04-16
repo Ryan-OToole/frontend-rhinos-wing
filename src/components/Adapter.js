@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3000/posts/'
+const URL = 'http://localhost:3000/posts/';
 
 class Adapter {
 
