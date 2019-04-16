@@ -57,7 +57,7 @@ class LoginBox extends Component {
       </Fragment>
     );
   }
-}
+}      
 
 
 function mapStateToProps(state) {
@@ -74,8 +74,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-<<<<<<< HEAD
 export default connect(mapStateToProps, mapDispatchToProps)(LoginBox);
-=======
-export default connect(mapStateToProps, mapDispatchToProps)(LoginBox)
->>>>>>> b047622bccb1305ba4677b242de9f05da78dc9bb
