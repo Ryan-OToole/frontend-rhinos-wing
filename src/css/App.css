@@ -183,16 +183,16 @@ body {
   float: right;
   width: 50%; }
 
-.card__picture {
+.welcome {
+  padding: 10rem;
+  text-align: center;
   background-size: cover;
   height: 87rem;
-  width: 100%;
   background-blend-mode: screen;
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg"); }
 
-.card__picture-text {
+.welcome__text {
   padding: 15px;
-  text-align: center;
   font-size: 2.8rem;
   font-weight: 300;
   color: #fff;
@@ -202,10 +202,6 @@ body {
 
 .card__picture-text-holder {
   padding: 10rem; }
-
-.login-welcome-page {
-  padding: 6rem;
-  text-align: center; }
 
 .login-button-welcome {
   border: none;
@@ -221,18 +217,30 @@ body {
   background: #39dc79;
   color: #000; }
 
-.login-username-welcome {
+.welcome__login-form--username {
+  height: 6rem;
+  width: 20rem;
+  margin-right: 1rem; }
+
+.welcome__login-form--password {
   height: 6rem;
   width: 20rem; }
 
-.login-password-welcome {
-  height: 6rem;
-  width: 20rem; }
+.welcome__login-form {
+  padding: 2rem;
+  text-align: center; }
 
-.welcome-greeting {
+.welcome__greeting {
   font-size: 2.7rem;
   padding: 10rem; }
 
-.logo-welcome {
+.welcome__greeting--2 {
+  font-size: 2rem;
+  padding: 10rem; }
+
+.welcome__logo {
   height: 10rem;
   width: 15rem; }
+
+.welcome__text {
+  margin-left: 6rem; }

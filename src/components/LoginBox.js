@@ -13,7 +13,7 @@ class LoginBox extends Component {
     this.setState({
       [event.target.name]: event.target.value,
     })
-  }   
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -47,10 +47,10 @@ class LoginBox extends Component {
       <Fragment>
         <div>
           <div>
-            <form className="login-form-welcome" onSubmit={this.handleSubmit}>
-              <input type="text" name="username" className="login-username-welcome welcome" placeholder="Phone, email, or username" onChange={this.handleChange} value={this.state.username} />
-              <input type="text" name="password" className="login-password-welcome welcome" placeholder="Password" onChange={this.handleChange} value={this.state.password} />
-              <input type="submit" name="submit" className="login-button-welcome welcome" value="login"  />
+            <form className="welcome__login-form" onSubmit={this.handleSubmit}>
+              <input type="text" name="username" className="welcome__login-form--username" placeholder="Phone, email, or username" onChange={this.handleChange} value={this.state.username} />
+              <input type="text" name="password" className="welcome__login-form--password" placeholder="Password" onChange={this.handleChange} value={this.state.password} />
+              <input type="submit" name="submit" className="welcome__login-form--button" value="login"  />
             </form>
           </div>
         </div>
