@@ -11,7 +11,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
           <Switch>
               <Route exact path="/" component={(props) => <Welcome {...props} /> }/>
               <Route path="/login" component={(props) => <LoginForm {...props} /> }/>

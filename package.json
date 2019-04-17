@@ -1,5 +1,5 @@
 {
-  "name": "rhinoswing",
+  "name": "frontend-rhinos-wing",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,7 +27,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-css": "node-sass --include-path scss sass/main.scss css/style.css"
+    "build-css": "node-sass --include-path scss sass/main.scss css/style.css",
+    "compile:sass": "node-sass src/sass/main.scss src/css/App.css -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,9 +41,6 @@
   ],
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "webpack.config.js",
-  "scripts": {
-  "compile:sass": "node-sass src/sass/main.scss src/css/App.css -w"
-},
   "devDependencies": {},
   "repository": {
     "type": "git",
@@ -55,4 +53,3 @@
   },
   "homepage": "https://github.com/Ryan-OToole/frontend-rhinos-wing#readme"
 }
-  
