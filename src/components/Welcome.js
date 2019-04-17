@@ -28,10 +28,12 @@ class Welcome extends Component {
         </div>
 
         <div className="col-2-of-2">
-            <LoginBox />
-          <img src="https://cdn.dribbble.com/users/64184/screenshots/3003556/plt_mf_soaring_rhino.jpg" alt="logo" className="welcome__logo" />
-          <div className="welcome__greeting">See What's Happening in your neighborhood right now</div>
-          <div className="welcome__greeting--2">Join Rhino's Wing</div>
+          <LoginBox />
+          <div className="welcome__right-side">
+            <img src="https://cdn.dribbble.com/users/64184/screenshots/3003556/plt_mf_soaring_rhino.jpg" alt="logo" className="welcome__right-side--logo" />
+            <div className="welcome__right-side--greeting1">See What's Happening in your neighborhood right now</div>
+            <div className="welcome__right-side--greeting2">Join Rhino's Wing</div>
+          </div>
         </div>
       </Fragment>
     );

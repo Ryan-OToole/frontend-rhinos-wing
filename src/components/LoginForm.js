@@ -55,7 +55,7 @@ class LoginForm extends Component {
           <title>Please Login</title>
         </header>
         <div className="login-body">
-          <div className="login-box">
+          <div className="login-body__login-box">
             <img alt="" src="https://png.pngtree.com/png-vector/20190225/ourlarge/pngtree-vector-female-avatar-icon-png-image_702460.jpg" className="avatar" />
             <h1 className="h1">Login Here</h1>
             <form onSubmit={this.handleSubmit}>

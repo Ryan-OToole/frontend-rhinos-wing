@@ -15,72 +15,76 @@
   height: 87rem;
   background-blend-mode: screen;
   background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url('https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg');
-}
 
-.welcome__text {
-  padding: 15px;
-  font-size: 2.8rem;
-  font-weight: 300;
-  color: $color-white;
-  top: 12rem;
-  right: 2rem;
-  width: 75%;
-}
+  &__login-form {
+    padding: 2rem;
+    text-align: center;
 
-.card__picture-text-holder {
-  padding: 10rem;
-}
+    &--button {
+      border: none;
+      outline: none;
+      height: 6rem;
+      width: 10rem;
+      background: $color-tertiary-light;
+      color: $color-white;
+      font-size: 1.8rem;
+
+      &:hover {
+        cursor: pointer;
+        background: #39dc79;
+        color: $color-black;
+      }
+    }
+
+    &--password {
+      height: 6rem;
+      width: 20rem;
+    }
+  }
 
 
+  &__text {
+    padding: 15px;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: $color-white;
+    width: 75%;
+    margin-left: 6rem;
 
-.login-button-welcome {
-  border: none;
-  outline: none;
-  height: 6rem;
-  width: 10rem;
-  background: #1c8adb;
-  color: $color-white;
-  font-size: 1.8rem;
+    }
 
-}
+  &__login-form--username {
+    height: 6rem;
+    width: 20rem;
+    margin-right: 1rem;
+  }
+  &__login-form--password {
+      height: 6rem;
+      width: 20rem;
+    }
 
-.login-button-welcome:hover {
-  cursor: pointer;
-  background: #39dc79;
-  color: $color-black;
-}
+  &__right-side {
 
-.welcome__login-form--username {
-  height: 6rem;
-  width: 20rem;
-  margin-right: 1rem;
-}
+    padding: 7rem;
 
-.welcome__login-form--password {
-  height: 6rem;
-  width: 20rem;
-}
+    &--logo {
+      padding: 1rem;
+      height: 10rem;
+      width: 15rem;
+    }
 
-.welcome__login-form {
-  padding: 2rem;
-  text-align: center;
-}
+    &--greeting1 {
+      padding: .5rem;
+      font-size: 2.7rem;
+      text-align: center;
+      margin-right: 3rem;
+      margin-left: 3rem;
+    }
 
-.welcome__greeting {
-  font-size: 2.7rem;
-  padding: 10rem;
-}
+    &--greeting2 {
+      padding: .5rem;
+      font-size: 2rem;
+    }
+  }
 
-.welcome__greeting--2 {
-  font-size: 2rem;
-  padding: 10rem;
-}
-
-.welcome__logo {
-  height: 10rem;
-  width: 15rem;
-}
-
-.welcome__text {
-  margin-left: 6rem;
 }

@@ -7,9 +7,8 @@
   background-size: cover;
   background-position: center;
   font-family: sans-serif;
-}
-     
-.login-box {
+
+&__login-box {
   width: 32rem;
   height: 42rem;
   background: rgba($color-black, 0.5);
@@ -20,44 +19,50 @@
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 7rem 3rem;
+
+  & h1 {
+    font-size: 3rem;
+  }
+
+  & p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  & input{
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  & input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: .1rem solid #fff;
+    background: transparent;
+    outline: none;
+    height: 4rem;
+    color: #fff;
+    font-size: 1.6rem;
+  }
+
+  & input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 4rem;
+    background: #1c8adb;
+    color: $color-white;
+    font-size: 1.8rem;
+    border-radius: 2rem;
+  }
+
+  & input[type="submit"]:hover {
+    cursor: pointer;
+    background: #39dc79;
+    color: 000;
+    }
+  }
 }
 
-.login-box p{
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-}
-
-.login-box input{
-  width: 100%;
-  margin-bottom: 2rem;
-}
-
-.login-box input[type="text"], input[type="password"] {
-  border: none;
-  border-bottom: .1rem solid #fff;
-  background: transparent;
-  outline: none;
-  height: 4rem;
-  color: #fff;
-  font-size: 1.6rem;
-}
-
-.login-box input[type="submit"] {
-  border: none;
-  outline: none;
-  height: 4rem;
-  background: #1c8adb;
-  color: $color-white;
-  font-size: 1.8rem;
-  border-radius: 2rem;
-}
-
-.login-box input[type="submit"]:hover {
-  cursor: pointer;
-  background: #39dc79;
-  color: 000;
-}
 
 .background_image {
   background: url('https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg');

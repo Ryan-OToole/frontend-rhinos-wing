@@ -43,50 +43,46 @@ body {
   background-size: cover;
   background-position: center;
   font-family: sans-serif; }
-
-.login-box {
-  width: 32rem;
-  height: 42rem;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  box-sizing: border-box;
-  padding: 7rem 3rem; }
-
-.login-box p {
-  margin: 0;
-  padding: 0;
-  font-weight: bold; }
-
-.login-box input {
-  width: 100%;
-  margin-bottom: 2rem; }
-
-.login-box input[type="text"], input[type="password"] {
-  border: none;
-  border-bottom: .1rem solid #fff;
-  background: transparent;
-  outline: none;
-  height: 4rem;
-  color: #fff;
-  font-size: 1.6rem; }
-
-.login-box input[type="submit"] {
-  border: none;
-  outline: none;
-  height: 4rem;
-  background: #1c8adb;
-  color: #fff;
-  font-size: 1.8rem;
-  border-radius: 2rem; }
-
-.login-box input[type="submit"]:hover {
-  cursor: pointer;
-  background: #39dc79;
-  color: 000; }
+  .login-body__login-box {
+    width: 32rem;
+    height: 42rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 7rem 3rem; }
+    .login-body__login-box h1 {
+      font-size: 3rem; }
+    .login-body__login-box p {
+      margin: 0;
+      padding: 0;
+      font-weight: bold; }
+    .login-body__login-box input {
+      width: 100%;
+      margin-bottom: 2rem; }
+    .login-body__login-box input[type="text"], .login-body__login-box input[type="password"] {
+      border: none;
+      border-bottom: .1rem solid #fff;
+      background: transparent;
+      outline: none;
+      height: 4rem;
+      color: #fff;
+      font-size: 1.6rem; }
+    .login-body__login-box input[type="submit"] {
+      border: none;
+      outline: none;
+      height: 4rem;
+      background: #1c8adb;
+      color: #fff;
+      font-size: 1.8rem;
+      border-radius: 2rem; }
+    .login-body__login-box input[type="submit"]:hover {
+      cursor: pointer;
+      background: #39dc79;
+      color: 000; }
 
 .background_image {
   background: url("https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg");
@@ -190,57 +186,50 @@ body {
   height: 87rem;
   background-blend-mode: screen;
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg"); }
-
-.welcome__text {
-  padding: 15px;
-  font-size: 2.8rem;
-  font-weight: 300;
-  color: #fff;
-  top: 12rem;
-  right: 2rem;
-  width: 75%; }
-
-.card__picture-text-holder {
-  padding: 10rem; }
-
-.login-button-welcome {
-  border: none;
-  outline: none;
-  height: 6rem;
-  width: 10rem;
-  background: #1c8adb;
-  color: #fff;
-  font-size: 1.8rem; }
-
-.login-button-welcome:hover {
-  cursor: pointer;
-  background: #39dc79;
-  color: #000; }
-
-.welcome__login-form--username {
-  height: 6rem;
-  width: 20rem;
-  margin-right: 1rem; }
-
-.welcome__login-form--password {
-  height: 6rem;
-  width: 20rem; }
-
-.welcome__login-form {
-  padding: 2rem;
-  text-align: center; }
-
-.welcome__greeting {
-  font-size: 2.7rem;
-  padding: 10rem; }
-
-.welcome__greeting--2 {
-  font-size: 2rem;
-  padding: 10rem; }
-
-.welcome__logo {
-  height: 10rem;
-  width: 15rem; }
-
-.welcome__text {
-  margin-left: 6rem; }
+  .welcome__login-form {
+    padding: 2rem;
+    text-align: center; }
+    .welcome__login-form--button {
+      border: none;
+      outline: none;
+      height: 6rem;
+      width: 10rem;
+      background: #2998ff;
+      color: #fff;
+      font-size: 1.8rem; }
+      .welcome__login-form--button:hover {
+        cursor: pointer;
+        background: #39dc79;
+        color: #000; }
+    .welcome__login-form--password {
+      height: 6rem;
+      width: 20rem; }
+  .welcome__text {
+    padding: 15px;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #fff;
+    width: 75%;
+    margin-left: 6rem; }
+  .welcome__login-form--username {
+    height: 6rem;
+    width: 20rem;
+    margin-right: 1rem; }
+  .welcome__login-form--password {
+    height: 6rem;
+    width: 20rem; }
+  .welcome__right-side {
+    padding: 7rem; }
+    .welcome__right-side--logo {
+      padding: 1rem;
+      height: 10rem;
+      width: 15rem; }
+    .welcome__right-side--greeting1 {
+      padding: .5rem;
+      font-size: 2.7rem;
+      text-align: center;
+      margin-right: 3rem;
+      margin-left: 3rem; }
+    .welcome__right-side--greeting2 {
+      padding: .5rem;
+      font-size: 2rem; }
