@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { updateUser } from '../actions/index';
 import '../css/App.css';
 
-
-
 class LoginForm extends Component {
   state = {
     username: "",
@@ -31,18 +29,21 @@ class LoginForm extends Component {
     })
     .then( r=>r.json() )
     .then( json => {
+      if(json.errors) {
+      alert(`${json.errors}`)
+          this.setState({
+              username: "",
+              password: ""
+            })
+    }
+    else {
       localStorage.setItem('token', json.token);
       this.props.updateUser(json)
       this.props.history.push("/");
-    })
-    .catch( err => {
-      console.log()
-      this.setState({
-        username: "",
-        password: ""
-      });
-    });
-  }
+    }
+  })
+}
+
 
   componentWillMount() {
     document.body.className = 'background_image'

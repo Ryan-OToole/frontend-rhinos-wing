@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import '../css/App.css';
 import '../css/icon-font.css';
-import RegistrationForm from './RegistrationForm';
 import LoginBox from './LoginBox';
 
 class Welcome extends Component {
@@ -31,8 +30,12 @@ class Welcome extends Component {
           <LoginBox />
           <div className="welcome__right-side">
             <img src="https://cdn.dribbble.com/users/64184/screenshots/3003556/plt_mf_soaring_rhino.jpg" alt="logo" className="welcome__right-side--logo" />
-            <div className="welcome__right-side--greeting1">See What's Happening in your neighborhood right now</div>
-            <div className="welcome__right-side--greeting2">Join Rhino's Wing</div>
+            <div className="welcome__right-side--greeting1">See what's happening in your neighborhood right now</div>
+            <div className="welcome__right-side--greeting2">Join Rhino's Wing today.</div>
+          <div className="welcome__right-side--btn">
+            <input type="submit" name="submit" value="Sign Up" className="welcome__right-side--btn--signup" />
+            <input type="submit" name="submit" value="Log in" className="welcome__right-side--btn--login" />
+          </div>
           </div>
         </div>
       </Fragment>

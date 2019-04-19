@@ -29,18 +29,20 @@ class LoginBox extends Component {
     })
     .then( r=>r.json() )
     .then( json => {
+      if(json.errors) {
+      alert(`${json.errors}`)
+          this.setState({
+              username: "",
+              password: ""
+            })
+    }
+    else {
       localStorage.setItem('token', json.token);
       this.props.updateUser(json)
-      this.props.history.push("/");
-    })
-    .catch( err => {
-      console.log()
-      this.setState({
-        username: "",
-        password: ""
-      });
-    });
-  }
+      this.props.history.push("/createStory");
+    }
+  })
+}
 
   render() {
     return (
@@ -50,7 +52,7 @@ class LoginBox extends Component {
             <form className="welcome__login-form" onSubmit={this.handleSubmit}>
               <input type="text" name="username" className="welcome__login-form--username" placeholder="Phone, email, or username" onChange={this.handleChange} value={this.state.username} />
               <input type="text" name="password" className="welcome__login-form--password" placeholder="Password" onChange={this.handleChange} value={this.state.password} />
-              <input type="submit" name="submit" className="welcome__login-form--button" value="login"  />
+              <input type="submit" name="submit" className="welcome__login-form--button" value="Log in" />
             </form>
           </div>
         </div>

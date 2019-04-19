@@ -17,28 +17,37 @@
   background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url('https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg');
 
   &__login-form {
-    padding: 2rem;
+    padding: 3.5rem;
     text-align: center;
 
     &--button {
-      border: none;
-      outline: none;
-      height: 6rem;
-      width: 10rem;
-      background: $color-tertiary-light;
-      color: $color-white;
+
+      height: 4.5rem;
+      width: 7rem;
+      background: $color-white;
+      color: $color-primary-light;
+      border-color: $color-primary-light;
       font-size: 1.8rem;
+      border-radius: 3rem;
 
       &:hover {
         cursor: pointer;
-        background: #39dc79;
-        color: $color-black;
+        background: $color-primary-dark;
+        color: $color-white;
       }
     }
 
+    &--username {
+      height: 5rem;
+      width: 21rem;
+      margin-right: 1rem;
+    }
+
     &--password {
-      height: 6rem;
-      width: 20rem;
+      height: 5rem;
+      width: 21rem;
+      height: 5rem;
+      margin-right: 1rem;
     }
   }
 
@@ -53,15 +62,6 @@
 
     }
 
-  &__login-form--username {
-    height: 6rem;
-    width: 20rem;
-    margin-right: 1rem;
-  }
-  &__login-form--password {
-      height: 6rem;
-      width: 20rem;
-    }
 
   &__right-side {
 
@@ -69,21 +69,64 @@
 
     &--logo {
       padding: 1rem;
-      height: 10rem;
-      width: 15rem;
+      height: 9rem;
+      width: 12rem;
+      margin-left: 8.4rem;
     }
 
     &--greeting1 {
       padding: .5rem;
       font-size: 2.7rem;
-      text-align: center;
-      margin-right: 3rem;
-      margin-left: 3rem;
+      text-align: left;
+      font-weight: bold;
+      margin-left: 9rem;
+      color: $color-black;
+      font-family: 'Roboto Condensed', sans-serif;
     }
 
     &--greeting2 {
-      padding: .5rem;
+      padding: 7rem;
       font-size: 2rem;
+      color: $color-black;
+      font-weight: bold;
+      margin-left: 2.8rem;
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    &--btn {
+      margin-left: 9.5rem;
+    }
+
+    &--btn--signup {
+      height: 4rem;
+      background: $color-white;
+      color: $color-primary-light;
+      border-color: $color-primary-light;
+      font-size: 1.8rem;
+      border-radius: 2rem;
+      width: 40rem;
+
+      &:hover {
+        cursor: pointer;
+        background: $color-primary-dark;
+        color: $color-white;
+      }
+    }
+
+    &--btn--login {
+      margin-top: 2rem;
+      height: 4rem;
+      background: $color-primary-light;
+      color: $color-white;
+      font-size: 1.8rem;
+      border-radius: 2rem;
+      width: 40rem;
+
+      &:hover {
+        cursor: pointer;
+        background: $color-primary-dark;
+        color: $color-white;
+      }
     }
   }
 
