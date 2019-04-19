@@ -22,19 +22,21 @@ class CreateStory extends Component {
   }
 
   handleSubmit = (event) => {
-    const rhino = this.state.rhino
     event.preventDefault()
+    const rhino = this.state.rhino
     console.log("before", rhino)
-    Adapter.postPost(this.props.currentUser.id, this.state.title, this.state.body, rhino)
-      .then( post => {
-        console.log(post)
-        const listOfPostsUpdated = Array.from(this.props.listOfPosts)
-        listOfPostsUpdated.unshift(post)
-        this.props.updatePostList(listOfPostsUpdated)
-        this.props.updatePostListFilter(listOfPostsUpdated)
-        console.log("after", rhino)
-      })
-      this.setState({posted: true})
+    if (this.props.currentUser) {
+      Adapter.postPost(this.props.currentUser.id, this.state.title, this.state.body, rhino)
+        .then( post => {
+          console.log(post)
+          const listOfPostsUpdated = Array.from(this.props.listOfPosts)
+          listOfPostsUpdated.unshift(post)
+          this.props.updatePostList(listOfPostsUpdated)
+          this.props.updatePostListFilter(listOfPostsUpdated)
+          console.log("after", rhino)
+        })
+        this.setState({posted: true})
+    }
   }
 
   newPost = (event) => {

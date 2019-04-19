@@ -3,7 +3,6 @@ import LoginForm from './LoginForm';
 import RegistrationForm from './RegistrationForm';
 import CreateStory from './CreateStory';
 import NavBar from './NavBar';
-import LoginBox from './LoginBox'
 import AnimalsContainer from '../containers/AnimalsContainer';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Welcome from './Welcome';
@@ -13,11 +12,11 @@ class App extends Component {
     return (
       <div>
           <Switch>
-              <Route path="/" exact component={(props) => <Welcome {...props} /> }/>
               <Route path="/login" component={(props) => <LoginForm {...props} /> }/>
               <Route path="/register" component={(props) => <RegistrationForm {...props} /> }/>
               <Route path="/createStory" component={(props) => <CreateStory {...props} /> }/>
               <Route path="/animalsContainer" components={(props) => <AnimalsContainer {...props} /> } />
+              <Route path="/" component={(props) => <Welcome {...props} /> }/>
           </Switch>
       </div>
     );
