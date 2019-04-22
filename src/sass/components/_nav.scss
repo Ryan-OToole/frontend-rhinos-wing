@@ -11,7 +11,7 @@
 }
 
 .header {
-  background: $color-peru;
+  background: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
 }
 
 .header::after {
@@ -51,7 +51,7 @@
 }
 
 #searchbar > form > input {
-  background: $color-black;
+  background: $color-primary-light;
   color: $color-white;
 }
 * {

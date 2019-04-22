@@ -1,6 +1,6 @@
 // login form stuff for avatar login- the redirect from landing page login button
 
-.logreg-body {
+.login-body {
   margin: 0;
   padding: 0;
   background: url('https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg');
@@ -8,7 +8,7 @@
   background-position: center;
   font-family: sans-serif;
 
-&__logreg-box {
+&__login-box {
   width: 32rem;
   height: 42rem;
   background: rgba($color-black, 0.5);
