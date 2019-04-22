@@ -36,14 +36,14 @@ body {
   float: right;
   width: 30.5%; }
 
-.login-body {
+.logreg-body {
   margin: 0;
   padding: 0;
   background: url("https://www.ecocompanion.com/blog/wp-content/uploads/2017/07/shutterstock_133800611-1000x605.jpg");
   background-size: cover;
   background-position: center;
   font-family: sans-serif; }
-  .login-body__login-box {
+  .logreg-body__logreg-box {
     width: 32rem;
     height: 42rem;
     background: rgba(0, 0, 0, 0.5);
@@ -54,16 +54,16 @@ body {
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 7rem 3rem; }
-    .login-body__login-box h1 {
+    .logreg-body__logreg-box h1 {
       font-size: 3rem; }
-    .login-body__login-box p {
+    .logreg-body__logreg-box p {
       margin: 0;
       padding: 0;
       font-weight: bold; }
-    .login-body__login-box input {
+    .logreg-body__logreg-box input {
       width: 100%;
       margin-bottom: 2rem; }
-    .login-body__login-box input[type="text"], .login-body__login-box input[type="password"] {
+    .logreg-body__logreg-box input[type="text"], .logreg-body__logreg-box input[type="password"] {
       border: none;
       border-bottom: .1rem solid #fff;
       background: transparent;
@@ -71,7 +71,7 @@ body {
       height: 4rem;
       color: #fff;
       font-size: 1.6rem; }
-    .login-body__login-box input[type="submit"] {
+    .logreg-body__logreg-box input[type="submit"] {
       border: none;
       outline: none;
       height: 4rem;
@@ -79,7 +79,7 @@ body {
       color: #fff;
       font-size: 1.8rem;
       border-radius: 2rem; }
-    .login-body__login-box input[type="submit"]:hover {
+    .logreg-body__logreg-box input[type="submit"]:hover {
       cursor: pointer;
       background: #39dc79;
       color: 000; }
@@ -245,10 +245,19 @@ body {
       height: 4rem;
       background: #fff;
       color: #ffb900;
-      border-color: #ffb900;
       font-size: 1.8rem;
       border-radius: 2rem;
-      width: 40rem; }
+      width: 40rem;
+      text-align: center;
+      padding: .6rem;
+      border: solid;
+      border-color: #ffb900; }
+      .welcome__right-side--btn--signup--link {
+        text-align: center;
+        text-decoration: none;
+        color: #ffb900; }
+        .welcome__right-side--btn--signup--link:focus, .welcome__right-side--btn--signup--link:hover, .welcome__right-side--btn--signup--link:visited, .welcome__right-side--btn--signup--link:link, .welcome__right-side--btn--signup--link:active {
+          text-decoration: none; }
       .welcome__right-side--btn--signup:hover {
         cursor: pointer;
         background: #ff7730;
@@ -260,8 +269,17 @@ body {
       color: #fff;
       font-size: 1.8rem;
       border-radius: 2rem;
-      width: 40rem; }
+      width: 40rem;
+      text-align: center;
+      padding: .7rem; }
+      .welcome__right-side--btn--login--link {
+        text-align: center;
+        text-decoration: none;
+        color: #fff; }
+        .welcome__right-side--btn--login--link:focus, .welcome__right-side--btn--login--link:hover, .welcome__right-side--btn--login--link:visited, .welcome__right-side--btn--login--link:link, .welcome__right-side--btn--login--link:active {
+          text-decoration: none; }
       .welcome__right-side--btn--login:hover {
         cursor: pointer;
         background: #ff7730;
-        color: #fff; }
+        color: #fff;
+        text-decoration: none; }

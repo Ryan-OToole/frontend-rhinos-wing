@@ -4,10 +4,15 @@ import { updateUser } from '../actions/index';
 import '../css/App.css';
 
 class LoginBox extends Component {
-  state = {
+
+  constructor(props) {
+    super(props)
+
+  this.state = {
     username: "",
     password: "",
   }
+}
 
   handleChange = (event) => {
     this.setState({
