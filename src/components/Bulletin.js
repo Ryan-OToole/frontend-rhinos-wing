@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/App.css';
 
 
-const Animalito = (props) => {
+const Bulletin = (props) => {
 
     return (
         <div className="card">
@@ -12,4 +12,4 @@ const Animalito = (props) => {
     )
   }
 
-export default Animalito;
+export default Bulletin;

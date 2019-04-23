@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { updateUser } from '../actions/index';
+import Adapter from './Adapter';
 import '../css/App.css';
 
 class LoginBox extends Component {
@@ -22,17 +23,7 @@ class LoginBox extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/sessions`, {
-      method: 'POST',
-      headers: {
-        "Content-Type" : "application/json",
-      },
-      body: JSON.stringify({
-        username: this.state.username,
-        password: this.state.password
-       })
-    })
-    .then( r=>r.json() )
+    Adapter.login(this.state.username, this.state.password)
     .then( json => {
       if(json.errors) {
       alert(`${json.errors}`)

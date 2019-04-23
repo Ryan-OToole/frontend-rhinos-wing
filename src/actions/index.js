@@ -1,7 +1,7 @@
 export const UPDATE_CURRENT_USER = 'UPDATE_CURRENT_USER';
-export const UPDATE_POSTS = 'UPDATE_POSTS';
-export const SET_CURRENT_POST = 'SET_CURRENT_POST'
-export const UPDATE_POSTS_FILTER = 'UPDATE_POSTS_FILTER'
+export const UPDATE_BULLETINS = 'UPDATE_BULLETINS';
+export const SET_CURRENT_BULLETIN = 'SET_CURRENT_BULLETIN';
+export const UPDATE_BULLETINS_FILTER = 'UPDATE_BULLETINS_FILTER';
 
 export function updateUser(user) {
   return {
@@ -10,23 +10,23 @@ export function updateUser(user) {
   };
 }
 
-export function updatePostList(postsArray) {
+export function updateBulletinList(postsArray) {
     return {
-      type: UPDATE_POSTS,
+      type: UPDATE_BULLETINS,
       payload: postsArray
     }
   }
 
-  export function updatePostListFilter(postsArray) {
+  export function updateBulletinListFilter(postsArray) {
       return {
-        type: UPDATE_POSTS_FILTER,
+        type: UPDATE_BULLETINS_FILTER,
         payload: postsArray
       }
     }
 
-  export function setCurrentPost(post) {
+  export function setCurrentBulletin(post) {
     return {
-      type: SET_CURRENT_POST,
+      type: SET_CURRENT_BULLETIN,
       payload: post
     }
   }

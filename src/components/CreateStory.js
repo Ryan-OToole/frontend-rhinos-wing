@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Adapter from './Adapter';
 import { Button } from 'react-bootstrap';
 import { connect } from "react-redux";
-import { updatePostList, updatePostListFilter } from '../actions/index';
+import { updateBulletinList, updateBulletinListFilter } from '../actions/index';
 import '../css/App.css';
 
 
@@ -24,16 +24,13 @@ class CreateStory extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const rhino = this.state.rhino
-    console.log("before", rhino)
     if (this.props.currentUser) {
-      Adapter.postPost(this.props.currentUser.id, this.state.title, this.state.body, rhino)
-        .then( post => {
-          console.log(post)
-          const listOfPostsUpdated = Array.from(this.props.listOfPosts)
-          listOfPostsUpdated.unshift(post)
-          this.props.updatePostList(listOfPostsUpdated)
-          this.props.updatePostListFilter(listOfPostsUpdated)
-          console.log("after", rhino)
+      Adapter.postBulletin(this.props.currentUser.id, this.state.title, this.state.body, rhino)
+        .then( bulletin => {
+          const listOfBulletinsUpdated = Array.from(this.props.listOfBulletins)
+          listOfBulletinsUpdated.unshift(bulletin)
+          this.props.updateBulletinList(listOfBulletinsUpdated)
+          this.props.updateBulletinListFilter(listOfBulletinsUpdated)
         })
         this.setState({posted: true})
     }
@@ -52,7 +49,6 @@ class CreateStory extends Component {
 
   handleDropdownChange = (event) => {
     if (event.target.value === "rhino"){
-      console.log("rhino")
           this.setState({
           rhino: true
         }, () => {console.log('state.rhino', this.state.rhino)})
@@ -65,12 +61,11 @@ class CreateStory extends Component {
 
   render() {
     return (
-
       <div>
       {this.state.posted === true ?
         <div>
-          <button onClick={this.newPost}>Create new post!</button>
-          <h1>Post Type: {this.state.rhino ? 'Rhino' : 'Wing'} </h1>
+          <button onClick={this.newPost}>Create new bulletin!</button>
+          <h1>Bulletin Type: {this.state.rhino ? 'Rhino' : 'Wing'} </h1>
           <h3>Title: {this.state.title} </h3>
           <p>Body: {this.state.body} </p>
         </div>
@@ -106,18 +101,18 @@ class CreateStory extends Component {
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
-    listOfPosts: state.listOfPosts,
-    listOfPostsFilter: state.listOfPostsFilter
+    listOfBulletins: state.listOfBulletins,
+    listOfBulletinsFilter: state.listOfBulletinsFilter
   }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-      updatePostList: (posts) => {
-        dispatch(updatePostList(posts))
+      updateBulletinList: (posts) => {
+        dispatch(updateBulletinList(posts))
       },
-      updatePostListFilter: (posts) => {
-        dispatch(updatePostListFilter(posts))
+      updateBulletinListFilter: (posts) => {
+        dispatch(updateBulletinListFilter(posts))
       }
     }
   }

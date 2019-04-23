@@ -1,4 +1,6 @@
 const URL = 'http://localhost:3000/posts/';
+const URL_SIGN_IN = 'http://localhost:3000/sessions';
+const URL_REGISTER = 'http://localhost:3000/users';
 
 class Adapter {
 
@@ -6,7 +8,37 @@ class Adapter {
     return !!localStorage.getItem('token')
   };
 
-  static postPost(user_id, title, body, rhino) {
+  static login(username, password) {
+    const config = {
+      method: 'POST',
+      headers: {
+        "Content-Type" : "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password
+       })
+    }
+  return fetch(URL_SIGN_IN, config)
+          .then( r=>r.json() )
+  }
+
+  static register(username, password) {
+    const config = {
+      method: 'POST',
+      headers: {
+        "Content-Type" : 'application/json'
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password
+       })
+    }
+    return fetch(URL_REGISTER, config)
+            .then( r=>r.json() )
+  }
+
+  static postBulletin(user_id, title, body, rhino) {
     const config = {
       method: "POST",
       headers: {
@@ -23,17 +55,17 @@ class Adapter {
             .then( r => r.json() )
   }
 
-  static getPosts(id) {
+  static getBulletins(id) {
     return fetch(`${URL}${id}`)
       .then( r => r.json() )
   }
 
-  static getPostsAll() {
+  static getBulletinsAll() {
     return fetch(URL)
             .then( r => r.json() )
   }
 
-  static destroyPost(id) {
+  static destroyBulletin(id) {
     return fetch(`${URL}/${id}`, {method:'DELETE'})
             .then( r => r.json() )
   }

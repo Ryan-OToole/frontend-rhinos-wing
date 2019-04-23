@@ -11,7 +11,7 @@
 }
 
 .header {
-  background: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+  background: linear-gradient(to right bottom, $color-primary-dark, $color-primary-light);
 }
 
 .header::after {
@@ -37,7 +37,7 @@
 
 .nav a {
   text-decoration: none;
-  color: #444;
+  color: $color-white;
 }
 
 .nav a:hover::before {

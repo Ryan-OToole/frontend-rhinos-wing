@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { updateUser } from '../actions/index';
+import Adapter from './Adapter';
 import '../css/App.css';
+
 
 class RegistrationForm extends Component {
   state = {
@@ -17,19 +19,8 @@ class RegistrationForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/users`, {
-      method: 'POST',
-      headers: {
-        "Content-Type" : 'application/json'
-      },
-      body: JSON.stringify({
-        username: this.state.username,
-        password: this.state.password
-       })
-    })
-    .then( r=>r.json() )
+    Adapter.register(this.state.username, this.state.password)
     .then( json => {
-
       if (json.username === undefined) {
         alert('Username taken choose another');
       }

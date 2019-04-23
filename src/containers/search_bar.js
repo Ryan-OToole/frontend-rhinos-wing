@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updatePostList } from '../actions/index';
+import { updateBulletinList } from '../actions/index';
 import { Button } from 'react-bootstrap';
 import '../css/App.css';
 
@@ -15,11 +15,10 @@ class SearchBar extends Component {
 
   onInputChange = (event) => {
     this.setState({ term: event.target.value });
-    const postList = this.props.listOfPostsFilter.filter( post => {
-      return post.title.toLowerCase().includes(event.target.value.toLowerCase())
+    const bulletinList = this.props.listOfBulletinsFilter.filter( bulletin => {
+      return bulletin.title.toLowerCase().includes(event.target.value.toLowerCase())
     })
-    console.log(postList)
-    this.props.updatePostList(postList)
+    this.props.updateBulletinList(bulletinList)
 }
 
   onFormSubmit = (event) => {
@@ -57,15 +56,15 @@ class SearchBar extends Component {
   function mapStateToProps(state) {
     return {
       currentUser: state.currentUser,
-      listOfPosts: state.listOfPosts,
-      listOfPostsFilter: state.listOfPostsFilter
+      listOfBulletins: state.listOfBulletins,
+      listOfBulletinsFilter: state.listOfBulletinsFilter
     }
   }
 
   function mapDispatchToProps(dispatch) {
     return {
-      updatePostList: (posts) => {
-        dispatch(updatePostList(posts))
+      updateBulletinList: (bulletins) => {
+        dispatch(updateBulletinList(bulletins))
       }
     }
   }
