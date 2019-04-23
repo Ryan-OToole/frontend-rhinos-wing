@@ -9,7 +9,7 @@
 }
 
 .welcome {
-  padding: 10rem;
+  padding: 13rem;
   text-align: center;
   background-size: cover;
   height: 87rem;
@@ -85,11 +85,12 @@
     }
 
     &--greeting2 {
-      padding: 7rem;
+      margin-top: 7rem;
+      margin-bottom: 2rem;
+      margin-left: 10rem;
       font-size: 2rem;
       color: $color-black;
       font-weight: bold;
-      margin-left: 2.8rem;
       font-family: 'Roboto Condensed', sans-serif;
     }
 
@@ -105,7 +106,6 @@
       border-radius: 2rem;
       width: 40rem;
       text-align: center;
-      padding: .6rem;
       border: solid;
       border-color: $color-primary-light;
 

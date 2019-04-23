@@ -180,7 +180,7 @@ body {
   width: 50%; }
 
 .welcome {
-  padding: 10rem;
+  padding: 13rem;
   text-align: center;
   background-size: cover;
   height: 87rem;
@@ -233,11 +233,12 @@ body {
       color: #000;
       font-family: 'Roboto Condensed', sans-serif; }
     .welcome__right-side--greeting2 {
-      padding: 7rem;
+      margin-top: 7rem;
+      margin-bottom: 2rem;
+      margin-left: 10rem;
       font-size: 2rem;
       color: #000;
       font-weight: bold;
-      margin-left: 2.8rem;
       font-family: 'Roboto Condensed', sans-serif; }
     .welcome__right-side--btn {
       margin-left: 9.5rem; }
@@ -249,7 +250,6 @@ body {
       border-radius: 2rem;
       width: 40rem;
       text-align: center;
-      padding: .6rem;
       border: solid;
       border-color: #ffb900; }
       .welcome__right-side--btn--signup--link {
