@@ -10,6 +10,7 @@ class BulletinsContainer extends Component {
   componentDidMount() {
         Adapter.getBulletinsAll()
           .then( bulletins => {
+              console.log(bulletins)
               this.props.updateBulletinList(bulletins)
               this.props.updateBulletinListFilter(bulletins)
           });
@@ -19,7 +20,7 @@ class BulletinsContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="stories">
         <Bulletins />
       </div>
     );

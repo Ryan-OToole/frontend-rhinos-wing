@@ -6,8 +6,8 @@ const Bulletin = (props) => {
 
     return (
         <div className="card">
-          <h3>{props.post.title}</h3>
-          <p className="card-body">{props.post.body}</p>
+          <h3>{props.bulletin.title}</h3>
+          <p className="card-body">{props.bulletin.body}</p>
         </div>
     )
   }

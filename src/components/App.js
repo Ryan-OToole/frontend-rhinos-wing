@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import LoginForm from './LoginForm';
 import RegistrationForm from './RegistrationForm';
 import CreateStory from './CreateStory';
@@ -13,7 +13,10 @@ class App extends Component {
     return (
       <div>
         { Adapter.isLoggedIn() ?
-          <NavBar />
+          <Fragment>
+            <NavBar />
+            <BulletinsContainer />
+          </Fragment>
           :
           <div></div>
         }
