@@ -1,6 +1,6 @@
 const URL = 'http://localhost:3000/posts/';
-const URL_SIGN_IN = 'http://localhost:3000/sessions';
-const URL_REGISTER = 'http://localhost:3000/users';
+const URL_SESSIONS = 'http://localhost:3000/sessions';
+const URL_USERS = 'http://localhost:3000/users';
 
 class Adapter {
 
@@ -19,7 +19,7 @@ class Adapter {
         password: password
        })
     }
-  return fetch(URL_SIGN_IN, config)
+  return fetch(URL_SESSIONS, config)
           .then( r=>r.json() )
   }
 
@@ -34,7 +34,7 @@ class Adapter {
         password: password
        })
     }
-    return fetch(URL_REGISTER, config)
+    return fetch(URL_USERS, config)
             .then( r=>r.json() )
   }
 
@@ -56,7 +56,7 @@ class Adapter {
   }
 
   static getBulletins(id) {
-    return fetch(`${URL}${id}`)
+    return fetch(`${URL_USERS}/${id}/posts`)
       .then( r => r.json() )
   }
 

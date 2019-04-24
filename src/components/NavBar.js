@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 import '../css/App.css';
 import SearchBar from '../containers/search_bar';
 import Adapter from './Adapter';
+import { connect } from 'react-redux';
+import { updateUser } from '../actions/index';
 
 class NavBar extends Component {
 
   handleClick = () => {
     localStorage.clear();
+    this.props.updateUser(null);
+
   }
   render() {
     return (
@@ -22,7 +26,7 @@ class NavBar extends Component {
               <ul className="ul">
                   <li  className="li"><Link to="/">Home</Link></li>
                   <li className="li"><Link to="/createStory">Create Story</Link></li>
-                  <li className="li" onClick={this.handleClick}><Link to="/login">Logout</Link></li>
+                  <li className="li" onClick={this.handleClick}><Link to="/">Logout</Link></li>
               </ul>
                 :
               <ul className="ul">
@@ -40,4 +44,12 @@ class NavBar extends Component {
 
 }
 
-export default NavBar;
+function mapDispatchToProps(dispatch) {
+  return {
+    updateUser: (user) => {
+      dispatch(updateUser(user))
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(NavBar);

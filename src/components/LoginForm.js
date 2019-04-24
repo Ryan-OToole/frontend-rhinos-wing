@@ -10,6 +10,10 @@ class LoginForm extends Component {
     password: "",
   }
 
+  componentDidMount() {
+    document.body.className = 'background_image'
+  }
+
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -19,7 +23,6 @@ class LoginForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     Adapter.login(this.state.username, this.state.password)
-      .then( r=>r.json() )
       .then( json => {
         if(json.errors) {
         alert(`${json.errors}`)
@@ -30,16 +33,11 @@ class LoginForm extends Component {
       }
         else {
           localStorage.setItem('token', json.token);
-          this.props.updateUser(json)
+          this.props.updateUser(json.id)
           this.props.history.push("/");
       }
     })
 }
-
-
-  componentWillMount() {
-    document.body.className = 'background_image'
-  }
 
   render() {
     return (

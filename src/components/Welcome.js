@@ -9,6 +9,10 @@ import { Link } from 'react-router-dom';
 
 class Welcome extends Component {
 
+    componentDidMount() {
+      document.body.className = ''
+    }
+
   render() {
     return(
       <Fragment>

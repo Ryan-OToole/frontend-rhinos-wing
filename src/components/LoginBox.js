@@ -34,7 +34,7 @@ class LoginBox extends Component {
     }
     else {
       localStorage.setItem('token', json.token);
-      this.props.updateUser(json)
+      this.props.updateUser(json.id)
       this.props.history.push("/createStory");
     }
   })
