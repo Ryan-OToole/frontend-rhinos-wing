@@ -7,7 +7,7 @@ const defaultState = {
   currentBulletin: null
 }
 
-const reducer = (state = defaultState, action) => {
+const reducers = (state = defaultState, action) => {
 
   switch(action.type) {
     case UPDATE_CURRENT_USER:
@@ -23,4 +23,4 @@ const reducer = (state = defaultState, action) => {
   }
 }
 
-export default reducer;
+export default reducers;

@@ -17,7 +17,6 @@ class Bulletins extends Component {
       </div>
     )
   }
-
 };
 
   function mapStateToProps(state) {
