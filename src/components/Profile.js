@@ -14,15 +14,21 @@ class Profile extends Component {
     }
   }
 
+  deleteBulletin = (bulletin) => {
+    Adapter.destroyBulletin(bulletin.id)
+  }
+
   mapPosts = () => {
     if (this.props.currentUserBulletins !== []) {
     return this.props.currentUserBulletins.map( bulletin => {
         return (
           <div className="card" key={bulletin.id}>
             <h3>{bulletin.title}</h3>
-            <p>{bulletin.body}</p>
-            <button>Edit</button>
-            <button>Delete</button>
+            <p>{bulletin.body.length >= 50  ? `${bulletin.body.slice(0,100)}...` : bulletin.body}</p>
+            <div className="card__button">
+              <button className="card__button--edit">Edit</button>
+              <button onClick={ () => {this.deleteBulletin(bulletin)}} className="card__button--delete">Delete</button>
+            </div>
           </div>
 
         );

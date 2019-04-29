@@ -68,7 +68,6 @@ class Adapter {
 
   static destroyBulletin(id) {
     return fetch(`${URL}/${id}`, {method:'DELETE'})
-            .then( r => r.json() )
   }
 }
 
