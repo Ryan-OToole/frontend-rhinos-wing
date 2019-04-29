@@ -1,10 +1,12 @@
-import { UPDATE_CURRENT_USER, UPDATE_BULLETINS, SET_CURRENT_BULLETIN, UPDATE_BULLETINS_FILTER } from '../actions/index';
+import { UPDATE_CURRENT_USER, UPDATE_BULLETINS, SET_CURRENT_BULLETIN, UPDATE_BULLETINS_FILTER, UPDATE_CURRENT_USER_BULLETINS, UPDATE_CURRENT_USER_BULLETINS_FILTER } from '../actions/index';
 
 const defaultState = {
   currentUser: null,
   listOfBulletins: [],
   listOfBulletinsFilter: [],
-  currentBulletin: null
+  currentBulletin: null,
+  currentUserBulletins: [],
+  currentUserBulletinsFilter: []
 }
 
 const reducers = (state = defaultState, action) => {
@@ -18,6 +20,10 @@ const reducers = (state = defaultState, action) => {
       return {...state, currentBulletin: action.payload}
     case UPDATE_BULLETINS_FILTER:
       return {...state, listOfBulletinsFilter: action.payload}
+    case UPDATE_CURRENT_USER_BULLETINS:
+      return {...state, currentUserBulletins: action.payload.data}
+    case UPDATE_CURRENT_USER_BULLETINS_FILTER:
+      return {...state, currentUserBulletinsFilter: action.payload}
     default:
       return state
   }

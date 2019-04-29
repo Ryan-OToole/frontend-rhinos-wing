@@ -16,8 +16,6 @@ class BulletinsContainer extends Component {
           });
         };
 
-
-
   render() {
     return (
       <div className="stories">

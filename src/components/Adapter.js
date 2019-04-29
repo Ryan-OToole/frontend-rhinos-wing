@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const URL = 'http://localhost:3000/posts/';
 const URL_SESSIONS = 'http://localhost:3000/sessions';
 const URL_USERS = 'http://localhost:3000/users';
@@ -56,8 +58,7 @@ class Adapter {
   }
 
   static getBulletins(id) {
-    return fetch(`${URL_USERS}/${id}/posts`)
-      .then( r => r.json() )
+    return axios.get(`${URL_USERS}/${id}/posts`)
   }
 
   static getBulletinsAll() {

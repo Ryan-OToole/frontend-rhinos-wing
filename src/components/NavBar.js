@@ -26,6 +26,7 @@ class NavBar extends Component {
               <ul className="ul">
                   <li  className="li"><Link to="/">Home</Link></li>
                   <li className="li"><Link to="/createStory">Create Story</Link></li>
+                  <li className="li"><Link to="/profile">My Profile</Link></li>
                   <li className="li" onClick={this.handleClick}><Link to="/">Logout</Link></li>
               </ul>
                 :

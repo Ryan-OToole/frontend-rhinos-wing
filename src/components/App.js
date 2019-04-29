@@ -7,6 +7,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import Welcome from './Welcome';
 import NavBar from './NavBar';
 import Adapter from './Adapter';
+import Profile from './Profile';
 
 class App extends Component {
 
@@ -21,6 +22,7 @@ class App extends Component {
           <div></div>
         }
           <Switch>
+              <Route path="/profile" component={(props) => <Profile {...props} /> }/>
               <Route path="/login" component={(props) => <LoginForm {...props} /> }/>
               <Route path="/register" component={(props) => <RegistrationForm {...props} /> }/>
               <Route path="/createStory" component={(props) => <CreateStory {...props} /> }/>
