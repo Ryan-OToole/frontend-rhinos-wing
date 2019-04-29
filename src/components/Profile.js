@@ -18,9 +18,11 @@ class Profile extends Component {
     if (this.props.currentUserBulletins !== []) {
     return this.props.currentUserBulletins.map( bulletin => {
         return (
-          <div key={bulletin.id}>
+          <div className="card" key={bulletin.id}>
             <h3>{bulletin.title}</h3>
             <p>{bulletin.body}</p>
+            <button>Edit</button>
+            <button>Delete</button>
           </div>
 
         );
@@ -30,7 +32,7 @@ class Profile extends Component {
 
   render() {
     return (
-      <div>
+      <div className="stories">
         {this.mapPosts()}
       </div>
     );

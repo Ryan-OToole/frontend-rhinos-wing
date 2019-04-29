@@ -34,7 +34,7 @@ class LoginForm extends Component {
         else {
           localStorage.setItem('token', json.token);
           this.props.updateUser(json.id)
-          this.props.history.push("/");
+          this.props.history.push("/profile");
       }
     })
 }

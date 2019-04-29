@@ -7,19 +7,20 @@
   background: rgba($color-black, 0.25);
   border: 1px solid;
   color: $color-white;
-}
 
-.card-body {
-  color: $color-white;
-}
+  &-body {
+    color: $color-white;
+  }
 
-.card > h3 {
-  text-align: center;
-}
+  & > h3 {
+    text-align: center;
+  }
 
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba($color-black,0.2);
+  /* On mouse-over, add a deeper shadow */
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba($color-black,0.2);
+  }
+
 }
 
 .stories {

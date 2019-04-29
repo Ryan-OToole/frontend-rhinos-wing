@@ -5,11 +5,11 @@
   padding: 0;
   box-sizing: inherit; }
 
-html {
-  font-size: 62.5%; }
-
 body {
   box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
 
 .card {
   /* Add shadows to create the "card" effect */
@@ -18,17 +18,14 @@ body {
   length: 2rem;
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid;
-  color: #fff; }
-
-.card-body {
-  color: #fff; }
-
-.card > h3 {
-  text-align: center; }
-
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+  color: #fff;
+  /* On mouse-over, add a deeper shadow */ }
+  .card-body {
+    color: #fff; }
+  .card > h3 {
+    text-align: center; }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
 
 .stories {
   float: right;
@@ -138,7 +135,7 @@ body {
   padding-top: 3.5rem; }
 
 #searchbar > form > input {
-  background: #ffb900;
+  background: #000;
   color: #fff; }
 
 * {
